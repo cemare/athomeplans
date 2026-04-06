@@ -21,6 +21,7 @@ export default function RootLayout({
           </a>
           <nav style={{ display: "flex", gap: "1.5rem" }}>
             <a href="/catalog" style={{ textDecoration: "none", color: "inherit" }}>Catalog</a>
+            <a href="/builder" style={{ textDecoration: "none", color: "inherit" }}>Builder</a>
           </nav>
         </header>
         <main>{children}</main>

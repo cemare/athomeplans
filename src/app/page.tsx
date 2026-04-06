@@ -25,6 +25,22 @@ export default function HomePage() {
         >
           Browse the Catalog
         </Link>
+        <Link
+          href="/builder"
+          style={{
+            display: "inline-block",
+            marginLeft: "0.75rem",
+            background: "#111",
+            color: "#fff",
+            padding: "0.875rem 2rem",
+            borderRadius: "var(--radius)",
+            textDecoration: "none",
+            fontWeight: 600,
+            fontSize: "1rem",
+          }}
+        >
+          Start a Custom Plan
+        </Link>
       </section>
 
       <section>
