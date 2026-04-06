@@ -2,8 +2,6 @@ backend:
   name: github
   repo: cemare/athomeplans
   branch: main
-  auth_type: pkce
-  app_id: Ov23liIj6oJtc5m3fHyX
 
 site_url: https://athomeplans.com
 logo_url: /images/og-default.svg
