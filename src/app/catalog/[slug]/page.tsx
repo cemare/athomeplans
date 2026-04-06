@@ -1,6 +1,7 @@
 import { db } from "@/lib/db";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import SavePlanButton from "@/components/SavePlanButton";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -108,20 +109,7 @@ export default async function PlanDetailPage({ params }: PageProps) {
             {formatBudget(plan.estimatedBudgetUsd)}
           </div>
         </div>
-        <button
-          style={{
-            background: "var(--color-accent)",
-            color: "#fff",
-            border: "none",
-            padding: "0.75rem 1.5rem",
-            borderRadius: "var(--radius)",
-            fontWeight: 600,
-            fontSize: "1rem",
-            cursor: "pointer",
-          }}
-        >
-          Get This Plan
-        </button>
+        <SavePlanButton title={plan.title} sourcePlanSlug={plan.slug} />
       </div>
 
       {plan.tags.length > 0 && (

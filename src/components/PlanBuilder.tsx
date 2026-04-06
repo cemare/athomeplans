@@ -63,6 +63,8 @@ export default function PlanBuilder() {
   const [roomDepthFeet, setRoomDepthFeet] = useState(12);
   const [furnitureType, setFurnitureType] = useState<FurnitureType>("sofa");
   const [placed, setPlaced] = useState<PlacedFurniture[]>([]);
+  const [planTitle, setPlanTitle] = useState("My Custom Room Plan");
+  const [saveStatus, setSaveStatus] = useState<string | null>(null);
 
   const roomAspectRatio = useMemo(() => roomWidthFeet / roomDepthFeet, [roomDepthFeet, roomWidthFeet]);
 
@@ -107,6 +109,35 @@ export default function PlanBuilder() {
     a.download = `custom-plan-${roomType}-${Date.now()}.json`;
     a.click();
     URL.revokeObjectURL(url);
+  };
+
+  const savePlanToAccount = async () => {
+    setSaveStatus(null);
+    const response = await fetch("/api/saved-plans", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: planTitle,
+        layout: {
+          roomType,
+          style,
+          palette,
+          dimensions: { widthFeet: roomWidthFeet, depthFeet: roomDepthFeet },
+          furniture: placed,
+        },
+      }),
+    });
+
+    const json = await response.json().catch(() => ({}));
+    if (response.status === 401) {
+      setSaveStatus("Please sign in at /account, then save again.");
+      return;
+    }
+    if (!response.ok) {
+      setSaveStatus(json.error || "Could not save this plan.");
+      return;
+    }
+    setSaveStatus("Saved to your account dashboard.");
   };
 
   return (
@@ -187,6 +218,19 @@ export default function PlanBuilder() {
             </button>
           </div>
 
+          <label style={{ display: "block", marginBottom: "0.6rem" }}>
+            Plan title
+            <input value={planTitle} onChange={(e) => setPlanTitle(e.target.value)} style={{ width: "100%", marginTop: "0.3rem", padding: "0.45rem" }} />
+          </label>
+
+          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+            <button
+              type="button"
+              onClick={savePlanToAccount}
+              style={{ border: 0, borderRadius: "var(--radius)", background: "var(--color-accent)", color: "#fff", padding: "0.55rem 0.9rem", cursor: "pointer" }}
+            >
+              Save to Account
+            </button>
           <button
             type="button"
             onClick={exportPlan}
@@ -194,6 +238,8 @@ export default function PlanBuilder() {
           >
             Export Plan (JSON)
           </button>
+          </div>
+          {saveStatus ? <p style={{ marginTop: "0.5rem", color: "var(--color-muted)", fontSize: "0.9rem" }}>{saveStatus}</p> : null}
         </section>
 
         <section style={{ border: "1px solid var(--color-border)", borderRadius: "var(--radius)", padding: "1rem" }}>

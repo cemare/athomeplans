@@ -29,6 +29,7 @@ model DesignPlan {
 
   furnitureItems FurnitureItem[]
   tags           Tag[]           @relation("PlanTags")
+  savedPlans     SavedPlan[]
 }
 
 model FurnitureItem {
@@ -50,4 +51,47 @@ model Tag {
   name  String @unique
   slug  String @unique
   plans DesignPlan[] @relation("PlanTags")
+}
+
+model User {
+  id           String        @id @default(cuid())
+  email        String        @unique
+  passwordHash String
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  sessions     UserSession[]
+  savedPlans   SavedPlan[]
+}
+
+model UserSession {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model SavedPlan {
+  id             String     @id @default(cuid())
+  title          String
+  notes          String?
+  roomType       String?
+  style          String?
+  palette        String?
+  layoutJson     String     @default("{}")
+  shareToken     String     @unique @default(cuid())
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+
+  userId         String
+  user           User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sourcePlanId   String?
+  sourcePlan     DesignPlan? @relation(fields: [sourcePlanId], references: [id], onDelete: SetNull)
+
+  @@index([userId, createdAt])
 }
