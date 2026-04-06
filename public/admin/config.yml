@@ -1,0 +1,42 @@
+backend:
+  name: github
+  repo: cemare/athomeplans
+  branch: main
+
+site_url: https://athomeplans.com
+logo_url: /images/og-default.svg
+publish_mode: editorial_workflow
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: posts
+    label: Blog Posts
+    label_singular: Blog Post
+    folder: content/posts
+    create: true
+    extension: json
+    format: json
+    slug: '{{fields.slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: Slug, name: slug, widget: string, hint: lowercase-with-hyphens }
+      - { label: Title, name: title, widget: string }
+      - { label: Excerpt, name: excerpt, widget: text }
+      - { label: Publish Date, name: publishedAt, widget: datetime, date_format: YYYY-MM-DD, time_format: false }
+      - { label: Author, name: author, widget: string, default: At Home Plans Team }
+      - { label: Cover Image, name: coverImage, widget: image, required: false }
+      - label: Tags
+        name: tags
+        widget: list
+        field: { label: Tag, name: tag, widget: string }
+      - label: Etsy Links
+        name: etsyLinks
+        widget: list
+        required: false
+        fields:
+          - { label: Label, name: label, widget: string }
+          - { label: URL, name: url, widget: string }
+      - { label: Body, name: body, widget: markdown }

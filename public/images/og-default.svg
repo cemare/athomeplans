@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4EFE6"/>
+      <stop offset="1" stop-color="#DCC8AC"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#a)"/>
+  <rect x="74" y="74" width="1052" height="482" rx="24" fill="#FFFBF6" stroke="#C8B79E" stroke-width="4"/>
+  <text x="130" y="252" fill="#1F7A6D" font-family="Arial, sans-serif" font-size="54" font-weight="700">
+    At Home Plans Blog
+  </text>
+  <text x="130" y="330" fill="#2B241F" font-family="Arial, sans-serif" font-size="38" font-weight="500">
+    Interior design guides, decor inspiration,
+  </text>
+  <text x="130" y="380" fill="#2B241F" font-family="Arial, sans-serif" font-size="38" font-weight="500">
+    and floor plan ideas that convert.
+  </text>
+  <text x="130" y="476" fill="#6C5F55" font-family="Arial, sans-serif" font-size="30">
+    athomeplans.com
+  </text>
+</svg>
