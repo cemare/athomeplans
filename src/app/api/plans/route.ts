@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import type { PlanCategory, PlanStyle } from "@/types";
+// Note: SQLite does not support mode: "insensitive" — search is case-sensitive
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -20,8 +21,8 @@ export async function GET(request: Request) {
     ...(q
       ? {
           OR: [
-            { title: { contains: q, mode: "insensitive" as const } },
-            { description: { contains: q, mode: "insensitive" as const } },
+            { title: { contains: q } },
+            { description: { contains: q } },
           ],
         }
       : {}),

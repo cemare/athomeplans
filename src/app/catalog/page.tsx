@@ -1,6 +1,8 @@
 import { db } from "@/lib/db";
 import type { PlanCategory, PlanStyle, CatalogFilters } from "@/types";
+import { PLAN_CATEGORIES, PLAN_STYLES } from "@/types";
 import Link from "next/link";
+import CatalogFilterBar from "@/components/CatalogFilterBar";
 
 type PageProps = {
   searchParams: Promise<{
@@ -14,6 +16,10 @@ type PageProps = {
 function formatBudget(cents: number | null): string {
   if (!cents) return "Price TBD";
   return `$${(cents / 100).toLocaleString()}`;
+}
+
+function formatLabel(val: string): string {
+  return val.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 export default async function CatalogPage({ searchParams }: PageProps) {
@@ -35,8 +41,8 @@ export default async function CatalogPage({ searchParams }: PageProps) {
       ...(filters.q
         ? {
             OR: [
-              { title: { contains: filters.q, mode: "insensitive" } },
-              { description: { contains: filters.q, mode: "insensitive" } },
+              { title: { contains: filters.q } },
+              { description: { contains: filters.q } },
             ],
           }
         : {}),
@@ -45,19 +51,40 @@ export default async function CatalogPage({ searchParams }: PageProps) {
     orderBy: [{ featured: "desc" }, { createdAt: "desc" }],
   });
 
+  const activeFiltersCount = [filters.category, filters.style, filters.featured, filters.q].filter(
+    Boolean
+  ).length;
+
   return (
-    <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "2rem" }}>
-      <h1 style={{ fontSize: "2rem", fontWeight: "700", marginBottom: "0.5rem" }}>
-        Design Catalog
-      </h1>
-      <p style={{ color: "var(--color-muted)", marginBottom: "2rem" }}>
-        {plans.length} plan{plans.length !== 1 ? "s" : ""} available
-      </p>
+    <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "2rem" }}>
+      <div style={{ marginBottom: "2rem" }}>
+        <h1 style={{ fontSize: "2rem", fontWeight: "700", marginBottom: "0.5rem" }}>
+          Design Catalog
+        </h1>
+        <p style={{ color: "var(--color-muted)" }}>
+          {plans.length} plan{plans.length !== 1 ? "s" : ""} available
+          {activeFiltersCount > 0 && ` · ${activeFiltersCount} filter${activeFiltersCount !== 1 ? "s" : ""} active`}
+        </p>
+      </div>
+
+      <CatalogFilterBar
+        categories={PLAN_CATEGORIES}
+        styles={PLAN_STYLES}
+        currentCategory={filters.category}
+        currentStyle={filters.style}
+        currentQ={filters.q}
+        currentFeatured={filters.featured}
+      />
 
       {plans.length === 0 ? (
-        <p style={{ color: "var(--color-muted)", textAlign: "center", padding: "4rem 0" }}>
-          No plans found. Check back soon!
-        </p>
+        <div style={{ textAlign: "center", padding: "4rem 0" }}>
+          <p style={{ color: "var(--color-muted)", marginBottom: "1rem" }}>
+            No plans match your filters.
+          </p>
+          <Link href="/catalog" style={{ color: "var(--color-accent)" }}>
+            Clear filters
+          </Link>
+        </div>
       ) : (
         <div
           style={{
@@ -78,6 +105,7 @@ export default async function CatalogPage({ searchParams }: PageProps) {
                   borderRadius: "var(--radius)",
                   overflow: "hidden",
                   transition: "box-shadow 0.15s",
+                  height: "100%",
                 }}
               >
                 <div
@@ -88,7 +116,7 @@ export default async function CatalogPage({ searchParams }: PageProps) {
                     alignItems: "center",
                     justifyContent: "center",
                     color: "var(--color-muted)",
-                    fontSize: "0.875rem",
+                    fontSize: "2rem",
                   }}
                 >
                   {plan.coverImageUrl ? (
@@ -99,7 +127,7 @@ export default async function CatalogPage({ searchParams }: PageProps) {
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
                   ) : (
-                    "No image yet"
+                    <span title={plan.category}>{categoryEmoji(plan.category)}</span>
                   )}
                 </div>
                 <div style={{ padding: "1rem" }}>
@@ -138,12 +166,23 @@ export default async function CatalogPage({ searchParams }: PageProps) {
                     style={{
                       display: "flex",
                       justifyContent: "space-between",
+                      alignItems: "center",
                       fontSize: "0.8rem",
-                      color: "var(--color-muted)",
                     }}
                   >
-                    <span>{plan.style.replace(/_/g, " ")}</span>
-                    <span>{formatBudget(plan.estimatedBudgetUsd)}</span>
+                    <span
+                      style={{
+                        background: "#f0f0ff",
+                        color: "var(--color-accent)",
+                        padding: "0.15rem 0.5rem",
+                        borderRadius: "999px",
+                      }}
+                    >
+                      {formatLabel(plan.style)}
+                    </span>
+                    <span style={{ color: "var(--color-muted)" }}>
+                      {formatBudget(plan.estimatedBudgetUsd)}
+                    </span>
                   </div>
                 </div>
               </article>
@@ -153,4 +192,17 @@ export default async function CatalogPage({ searchParams }: PageProps) {
       )}
     </div>
   );
+}
+
+function categoryEmoji(category: string): string {
+  const map: Record<string, string> = {
+    LIVING_ROOM: "🛋️",
+    BEDROOM: "🛏️",
+    KITCHEN: "🍳",
+    BATHROOM: "🛁",
+    DINING_ROOM: "🍽️",
+    HOME_OFFICE: "💻",
+    FULL_HOME: "🏠",
+  };
+  return map[category] ?? "🏡";
 }

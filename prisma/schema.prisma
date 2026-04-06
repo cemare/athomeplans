@@ -5,42 +5,23 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
-enum PlanCategory {
-  LIVING_ROOM
-  BEDROOM
-  KITCHEN
-  BATHROOM
-  DINING_ROOM
-  HOME_OFFICE
-  FULL_HOME
-}
-
-enum PlanStyle {
-  MODERN
-  CONTEMPORARY
-  TRADITIONAL
-  MINIMALIST
-  BOHEMIAN
-  SCANDINAVIAN
-  INDUSTRIAL
-  COASTAL
-}
+// SQLite does not support native enums — using String fields with validation at app level
 
 model DesignPlan {
-  id          String       @id @default(cuid())
+  id          String  @id @default(cuid())
   title       String
-  slug        String       @unique
+  slug        String  @unique
   description String
-  category    PlanCategory
-  style       PlanStyle
+  category    String  // PlanCategory: LIVING_ROOM | BEDROOM | KITCHEN | BATHROOM | DINING_ROOM | HOME_OFFICE | FULL_HOME
+  style       String  // PlanStyle: MODERN | CONTEMPORARY | TRADITIONAL | MINIMALIST | BOHEMIAN | SCANDINAVIAN | INDUSTRIAL | COASTAL
   roomSizeSqFt Int?
   estimatedBudgetUsd Int?  // in cents
   coverImageUrl String?
-  images      String[]     // array of image URLs
+  images      String  @default("[]") // JSON array of image URLs
   featured    Boolean      @default(false)
   published   Boolean      @default(false)
   createdAt   DateTime     @default(now())
