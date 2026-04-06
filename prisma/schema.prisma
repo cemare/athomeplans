@@ -1,0 +1,72 @@
+// Prisma schema for Athena Interior Design Platform
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum PlanCategory {
+  LIVING_ROOM
+  BEDROOM
+  KITCHEN
+  BATHROOM
+  DINING_ROOM
+  HOME_OFFICE
+  FULL_HOME
+}
+
+enum PlanStyle {
+  MODERN
+  CONTEMPORARY
+  TRADITIONAL
+  MINIMALIST
+  BOHEMIAN
+  SCANDINAVIAN
+  INDUSTRIAL
+  COASTAL
+}
+
+model DesignPlan {
+  id          String       @id @default(cuid())
+  title       String
+  slug        String       @unique
+  description String
+  category    PlanCategory
+  style       PlanStyle
+  roomSizeSqFt Int?
+  estimatedBudgetUsd Int?  // in cents
+  coverImageUrl String?
+  images      String[]     // array of image URLs
+  featured    Boolean      @default(false)
+  published   Boolean      @default(false)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  furnitureItems FurnitureItem[]
+  tags           Tag[]           @relation("PlanTags")
+}
+
+model FurnitureItem {
+  id          String @id @default(cuid())
+  name        String
+  description String?
+  category    String
+  estimatedPriceUsd Int? // in cents
+  imageUrl    String?
+  affiliateUrl String?
+
+  plans       DesignPlan[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model Tag {
+  id    String @id @default(cuid())
+  name  String @unique
+  slug  String @unique
+  plans DesignPlan[] @relation("PlanTags")
+}
