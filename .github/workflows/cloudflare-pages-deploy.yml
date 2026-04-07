@@ -22,8 +22,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build app
-        run: npm run build
+      - name: Build Cloudflare bundle
+        run: npm run cf:build
 
       - name: Confirm deployment mode
         run: echo "Cloudflare Pages deploys this site directly from GitHub pushes to main."
