@@ -1,0 +1,300 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const ebooks = [
+  {
+    id: "small-living-room",
+    title: "How to Style a Small Living Room",
+    price: "$14.99",
+    description:
+      "Transform even the tiniest living space into a stylish, functional retreat. This guide walks you through furniture selection, layout tricks, lighting strategies, and decor hacks that make small rooms feel bigger — without a renovation budget.",
+    highlights: [
+      "Space-saving furniture pairings that actually work",
+      "Layout diagrams for 6 common small living room shapes",
+      "Color and mirror tricks to open up tight spaces",
+      "Shopping list with budget and mid-range picks",
+    ],
+    gumroadUrl: "https://gumroad.com/l/athomeplans-small-living-room",
+    badge: "Bestseller",
+    coverEmoji: "🛋️",
+  },
+  {
+    id: "furniture-guide",
+    title: "The Complete Furniture Buying Guide",
+    price: "$19.99",
+    description:
+      "Stop second-guessing every purchase. This comprehensive guide covers how to measure for furniture, choose the right scale for your room, identify quality construction, and build a cohesive look room by room — whether you're furnishing from scratch or refreshing a space.",
+    highlights: [
+      "Room-by-room measurement checklists",
+      "How to spot quality furniture at every price point",
+      "Style mixing rules: what works and what clashes",
+      "Retailer guide: where to shop for every budget",
+    ],
+    gumroadUrl: "https://gumroad.com/l/athomeplans-furniture-guide",
+    badge: "Most Comprehensive",
+    coverEmoji: "🪑",
+  },
+  {
+    id: "budget-design",
+    title: "Interior Design on a Budget: Room-by-Room",
+    price: "$24.99",
+    description:
+      "You don't need a designer's budget to live in a beautifully designed home. This room-by-room playbook shows you exactly how to prioritize spending, where to splurge vs. save, and how to source high-style pieces at a fraction of the cost.",
+    highlights: [
+      "Room-by-room budget breakdowns and priorities",
+      "Thrift, vintage & discount sourcing strategies",
+      "DIY projects with the highest visual return",
+      "Before/after transformations under $500 per room",
+    ],
+    gumroadUrl: "https://gumroad.com/l/athomeplans-budget-design",
+    badge: "Best Value",
+    coverEmoji: "🏠",
+  },
+];
+---
+
+<BaseLayout
+  title="Interior Design E-Books"
+  description="Practical interior design guides you can download instantly. From styling small living rooms to furnishing on a budget — everything you need to design a home you love."
+  canonicalPath="/ebooks"
+>
+  <section class="ebooksHero">
+    <div class="container">
+      <p class="eyebrow">Digital Guides</p>
+      <h1>Interior Design E-Books</h1>
+      <p class="heroLead">
+        Practical, beautifully written guides for every stage of your design journey.
+        Instant download — start reading in minutes.
+      </p>
+    </div>
+  </section>
+
+  <div class="container ebooksGrid sectionPad">
+    {ebooks.map((book) => (
+      <article class="ebookCard" id={book.id}>
+        <div class="ebookCover" aria-hidden="true">
+          <span class="ebookEmoji">{book.coverEmoji}</span>
+          <span class="ebookBadge">{book.badge}</span>
+        </div>
+        <div class="ebookInfo">
+          <h2>{book.title}</h2>
+          <p class="ebookDesc">{book.description}</p>
+          <ul class="ebookHighlights">
+            {book.highlights.map((h) => (
+              <li>{h}</li>
+            ))}
+          </ul>
+          <div class="ebookFooter">
+            <span class="ebookPrice">{book.price}</span>
+            <a
+              href={book.gumroadUrl}
+              target="_blank"
+              rel="noreferrer"
+              class="btnPrimary"
+            >
+              Buy on Gumroad
+            </a>
+          </div>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <section class="ebooksFaq container sectionPad">
+    <h2>Common Questions</h2>
+    <div class="faqGrid">
+      <div>
+        <h3>What format are the e-books?</h3>
+        <p>All e-books are delivered as high-quality PDFs, optimized for both screen reading and printing.</p>
+      </div>
+      <div>
+        <h3>How do I download after purchase?</h3>
+        <p>Gumroad sends a download link to your email immediately after purchase. No account required.</p>
+      </div>
+      <div>
+        <h3>Are there print versions?</h3>
+        <p>Not yet — but the PDFs are print-ready at 8.5×11". You can print them at home or at any print shop.</p>
+      </div>
+      <div>
+        <h3>Can I share the e-books?</h3>
+        <p>Each purchase is for personal use. If you'd like to share, please direct friends to this page — it helps us keep creating.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .ebooksHero {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 0 3rem;
+    text-align: center;
+  }
+
+  .ebooksHero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin: 0.5rem 0 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .heroLead {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .ebooksGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .ebookCard {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2.5rem;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    transition: box-shadow 0.2s;
+  }
+
+  .ebookCard:hover {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  }
+
+  .ebookCover {
+    background: linear-gradient(135deg, #f0ece6 0%, #e8e2d8 100%);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: 200px;
+    position: relative;
+  }
+
+  .ebookEmoji {
+    font-size: 3.5rem;
+    line-height: 1;
+  }
+
+  .ebookBadge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: #fff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+  }
+
+  .ebookInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .ebookInfo h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .ebookDesc {
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .ebookHighlights {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .ebookHighlights li {
+    font-size: 0.9rem;
+    color: var(--text);
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .ebookHighlights li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .ebookFooter {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+  }
+
+  .ebookPrice {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  .ebooksFaq {
+    border-top: 1px solid var(--border);
+  }
+
+  .ebooksFaq h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0 0 2rem;
+  }
+
+  .faqGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .faqGrid h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+  }
+
+  .faqGrid p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  @media (max-width: 720px) {
+    .ebookCard {
+      grid-template-columns: 1fr;
+    }
+
+    .ebookCover {
+      min-height: 140px;
+    }
+
+    .faqGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

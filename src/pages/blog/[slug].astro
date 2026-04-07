@@ -17,6 +17,46 @@ if (!post) {
   throw new Error("Blog post not found for route");
 }
 
+const ebookCtaMap: Record<string, { title: string; price: string; url: string; anchor: string }> = {
+  "Living Room": {
+    title: "How to Style a Small Living Room",
+    price: "$14.99",
+    url: "https://gumroad.com/l/athomeplans-small-living-room",
+    anchor: "small-living-room",
+  },
+  "Furniture": {
+    title: "The Complete Furniture Buying Guide",
+    price: "$19.99",
+    url: "https://gumroad.com/l/athomeplans-furniture-guide",
+    anchor: "furniture-guide",
+  },
+  "Budget": {
+    title: "Interior Design on a Budget: Room-by-Room",
+    price: "$24.99",
+    url: "https://gumroad.com/l/athomeplans-budget-design",
+    anchor: "budget-design",
+  },
+  "Decor": {
+    title: "Interior Design on a Budget: Room-by-Room",
+    price: "$24.99",
+    url: "https://gumroad.com/l/athomeplans-budget-design",
+    anchor: "budget-design",
+  },
+  "Styling": {
+    title: "Interior Design on a Budget: Room-by-Room",
+    price: "$24.99",
+    url: "https://gumroad.com/l/athomeplans-budget-design",
+    anchor: "budget-design",
+  },
+};
+
+const ebookCta = (() => {
+  for (const tag of post.tags) {
+    if (ebookCtaMap[tag]) return ebookCtaMap[tag];
+  }
+  return null;
+})();
+
 const siteUrl = import.meta.env.PUBLIC_SITE_URL || "https://athomeplans.com";
 const postUrl = `${siteUrl}/blog/${post.slug}`;
 
@@ -94,6 +134,27 @@ const formatLongDate = (dateValue: string): string =>
           ))
         )}
       </div>
+
+      {ebookCta && (
+        <section class="ebookInlineCta">
+          <p class="ebookInlineEyebrow">From our E-Book collection</p>
+          <div class="ebookInlineInner">
+            <div>
+              <h3>{ebookCta.title}</h3>
+              <p>Go deeper with our step-by-step guide — practical advice, shopping lists, and layout ideas in one instant download.</p>
+            </div>
+            <div class="ebookInlineActions">
+              <span class="ebookInlinePrice">{ebookCta.price}</span>
+              <a href={ebookCta.url} target="_blank" rel="noreferrer" class="btnPrimary ebookInlineBtn">
+                Buy on Gumroad
+              </a>
+              <a href={`/ebooks#${ebookCta.anchor}`} class="ebookInlineSeeAll">
+                See all e-books →
+              </a>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section class="sidebarBlock">
         <h2>Shop the Look on Etsy</h2>
@@ -208,6 +269,80 @@ const formatLongDate = (dateValue: string): string =>
   .markdownBody :global(em) {
     font-style: italic;
     color: var(--color-muted, #6b6560);
+  }
+
+  .ebookInlineCta {
+    margin-top: 2.5rem;
+    padding: 1.75rem 2rem;
+    background: #f0ece6;
+    border: 1px solid #ddd8d0;
+    border-radius: var(--radius);
+  }
+
+  .ebookInlineEyebrow {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 0.75rem;
+  }
+
+  .ebookInlineInner {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .ebookInlineInner > div:first-child {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .ebookInlineInner h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+    line-height: 1.35;
+  }
+
+  .ebookInlineInner > div:first-child p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .ebookInlineActions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .ebookInlinePrice {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .ebookInlineBtn {
+    font-size: 0.82rem;
+    padding: 0.45rem 1rem;
+    white-space: nowrap;
+  }
+
+  .ebookInlineSeeAll {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .ebookInlineSeeAll:hover {
+    color: var(--text);
   }
 
   .shopThisLook {
