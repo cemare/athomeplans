@@ -15,7 +15,8 @@
     "db:migrate": "prisma migrate dev",
     "db:seed": "tsx prisma/seed.ts",
     "deploy": "wrangler pages deploy ./dist",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "generate-types": "wrangler types"
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",
@@ -23,11 +24,14 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.8",
-    "@astrojs/cloudflare": "^12.6.0",
+    "@astrojs/cloudflare": "^13.1.7",
     "@types/node": "^22.0.0",
     "prisma": "^5.22.0",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
     "wrangler": "^4.80.0"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }
