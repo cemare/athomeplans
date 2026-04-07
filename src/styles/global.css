@@ -488,6 +488,28 @@ a {
   color: var(--text);
 }
 
+.inlineImage {
+  margin: 2rem 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.inlineImage img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+.inlineImage figcaption {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
 .postDetail .sidebarBlock {
   margin-top: 2rem;
 }

@@ -1,3 +1,10 @@
+export type InlineImage = {
+  src: string;
+  alt: string;
+  caption?: string;
+  afterParagraph: number;
+};
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -8,6 +15,7 @@ export type BlogPost = {
   tags: string[];
   etsyLinks: Array<{ label: string; url: string }>;
   body: string;
+  inlineImages?: InlineImage[];
   draft?: boolean;
 };
 

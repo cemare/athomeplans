@@ -71,8 +71,16 @@ const formatLongDate = (dateValue: string): string =>
       </div>
 
       <div class="articleBody">
-        {post.body.split("\n\n").map((paragraph) => (
-          <p>{paragraph}</p>
+        {post.body.split("\n\n").map((paragraph, index) => (
+          <>
+            <p>{paragraph}</p>
+            {post.inlineImages?.filter((img) => img.afterParagraph === index + 1).map((img) => (
+              <figure class="inlineImage">
+                <img src={img.src} alt={img.alt} loading="lazy" />
+                {img.caption && <figcaption>{img.caption}</figcaption>}
+              </figure>
+            ))}
+          </>
         ))}
       </div>
 
