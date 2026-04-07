@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import EmailCapture from "../../components/EmailCapture.astro";
+import { getAllPosts, getAllTags } from "../../lib/blog";
+
+const posts = getAllPosts();
+const tags = getAllTags();
+
+const formatShortDate = (dateValue: string): string =>
+  new Date(dateValue).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+---
+
+<BaseLayout title="Blog" description="Interior design blog posts from At Home Plans." canonicalPath="/blog">
+  <div class="container sectionPad">
+    <div class="blogIntro">
+      <p class="eyebrow">Blog</p>
+      <h1>Interior Design Guides and Ideas</h1>
+      <p>
+        Browse practical tips for room planning, decor selection, and shopping smarter through
+        Etsy-friendly recommendations.
+      </p>
+    </div>
+
+    <div class="blogLayout">
+      <section>
+        <div class="postGrid">
+          {posts.map((post) => (
+            <article class="postCard">
+              <a href={`/blog/${post.slug}`} class="cardImageLink">
+                <div class="coverMedia">
+                  <img src={post.coverImage} alt={post.title} loading="lazy" />
+                </div>
+              </a>
+              <p class="metaLine">
+                {formatShortDate(post.publishedAt)} · {post.author}
+              </p>
+              <h2><a href={`/blog/${post.slug}`}>{post.title}</a></h2>
+              <p>{post.excerpt}</p>
+              <div class="tagRow">
+                {post.tags.map((tag) => (
+                  <span>{tag}</span>
+                ))}
+              </div>
+              <a href={`/blog/${post.slug}`} class="readMoreLink">Read article</a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <aside class="blogSidebar">
+        <EmailCapture />
+        <section class="sidebarBlock">
+          <h2>Popular Etsy Links</h2>
+          <ul>
+            <li>
+              <a href="https://www.etsy.com/shop/athomeplans" target="_blank" rel="noreferrer">At Home Plans Etsy Store</a>
+            </li>
+            <li>
+              <a href="https://www.etsy.com/shop/athomeplans?section_id=0" target="_blank" rel="noreferrer">Best Selling Templates</a>
+            </li>
+          </ul>
+        </section>
+        <section class="sidebarBlock">
+          <h2>Topics</h2>
+          <div class="tagRow">
+            {tags.map((tag) => (
+              <span>{tag}</span>
+            ))}
+          </div>
+        </section>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>

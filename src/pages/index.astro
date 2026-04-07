@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import EmailCapture from "../components/EmailCapture.astro";
+import { getAllPosts } from "../lib/blog";
+import { getAllPlans } from "../lib/plans";
+
+const latestPosts = getAllPosts().slice(0, 3);
+const featuredPlans = getAllPlans().filter((plan) => plan.featured).slice(0, 3);
+
+const formatShortDate = (dateValue: string): string =>
+  new Date(dateValue).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">At Home Plans</p>
+      <h1>Design Plans and Home Styling Guides, Together</h1>
+      <p>
+        Browse ready-made interior design plans and learn practical styling strategies from our
+        blog, all in one place.
+      </p>
+      <div class="heroCtas">
+        <a href="/plans" class="btnPrimary">Browse Plans</a>
+        <a href="/blog" class="btnPrimary">Read the Blog</a>
+        <a href="https://www.etsy.com/shop/athomeplans" class="btnSecondary" target="_blank" rel="noreferrer">Shop on Etsy</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container sectionPad">
+    <div class="blogIntro">
+      <h2>Featured Plans</h2>
+      <p>Start with proven room layouts and curated shopping guidance.</p>
+    </div>
+    <div class="postGrid">
+      {featuredPlans.map((plan) => (
+        <article class="postCard">
+          <p class="metaLine">{plan.category} · {plan.style}</p>
+          <h3><a href={`/plans/${plan.slug}`}>{plan.title}</a></h3>
+          <p>{plan.summary}</p>
+          <a href={`/plans/${plan.slug}`} class="readMoreLink">View plan</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="container sectionPad">
+    <div class="latestWrap">
+      <div>
+        <h2>Latest Articles</h2>
+        <div class="postGrid">
+          {latestPosts.map((post) => (
+            <article class="postCard">
+              <p class="metaLine">{formatShortDate(post.publishedAt)}</p>
+              <h3><a href={`/blog/${post.slug}`}>{post.title}</a></h3>
+              <p>{post.excerpt}</p>
+              <a href={`/blog/${post.slug}`} class="readMoreLink">Read article</a>
+            </article>
+          ))}
+        </div>
+      </div>
+      <EmailCapture />
+    </div>
+  </section>
+</BaseLayout>

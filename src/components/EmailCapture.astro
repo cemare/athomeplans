@@ -1,0 +1,13 @@
+---
+const formAction = import.meta.env.PUBLIC_EMAIL_CAPTURE_URL || "https://example.com/newsletter-signup";
+---
+
+<section class="emailCapture" aria-labelledby="emailCaptureHeading">
+  <h2 id="emailCaptureHeading">Get Blog Updates</h2>
+  <p>Weekly interior design tips, furniture picks, and new plan drops.</p>
+  <form method="post" action={formAction} target="_blank">
+    <label for="emailCaptureInput" class="srOnly">Email address</label>
+    <input id="emailCaptureInput" name="email" type="email" required placeholder="you@domain.com" autocomplete="email" />
+    <button type="submit">Subscribe</button>
+  </form>
+</section>

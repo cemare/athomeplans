@@ -6,12 +6,11 @@ node_modules/
 # Testing
 /coverage
 
-# Next.js
+# Production build output
+/dist/
+/build
 /.next/
 /out/
-
-# Production
-/build
 
 # Misc
 .DS_Store
@@ -34,14 +33,13 @@ yarn-error.log*
 
 # TypeScript
 *.tsbuildinfo
-next-env.d.ts
 
 # Prisma
 prisma/migrations/dev/
 
-# OpenNext
-.open-next
-.dev.vars
+# Astro generated
+.astro/
 
 # Wrangler local state
 .wrangler
+.dev.vars

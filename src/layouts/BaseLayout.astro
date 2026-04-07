@@ -1,0 +1,85 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  ogType?: "website" | "article";
+  ogImage?: string;
+  noIndex?: boolean;
+}
+
+const {
+  title = "At Home Plans",
+  description = "Interior design plans and blog guides from At Home Plans.",
+  canonicalPath = "/",
+  ogType = "website",
+  ogImage = "/images/og-default.svg",
+  noIndex = false,
+} = Astro.props;
+
+const siteUrl = import.meta.env.PUBLIC_SITE_URL || "https://athomeplans.com";
+const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
+const pageTitle = title === "At Home Plans" ? title : `${title} | At Home Plans`;
+const ogImageUrl = new URL(ogImage, siteUrl).toString();
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    {noIndex ? <meta name="robots" content="noindex,nofollow" /> : null}
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="At Home Plans" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="pinterest-rich-pin" content="true" />
+  </head>
+  <body>
+    <header class="siteHeader">
+      <div class="container navWrap">
+        <a href="/" class="brandLink">At Home Plans</a>
+        <nav class="mainNav" aria-label="Main navigation">
+          <a href="/plans">Plans</a>
+          <a href="/blog">Blog</a>
+          <a href="https://www.etsy.com/shop/athomeplans" target="_blank" rel="noreferrer">Etsy Shop</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="siteFooter">
+      <div class="container footerGrid">
+        <div>
+          <h2>At Home Plans</h2>
+          <p>Making interior design accessible with ready-made and custom room plans.</p>
+        </div>
+        <div>
+          <h2>Shop Links</h2>
+          <ul>
+            <li>
+              <a href="https://www.etsy.com/shop/athomeplans" target="_blank" rel="noreferrer">Main Etsy Store</a>
+            </li>
+            <li>
+              <a href="https://www.etsy.com/shop/athomeplans?section_id=0" target="_blank" rel="noreferrer">New Arrivals</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; {year} At Home Plans</p>
+    </footer>
+  </body>
+</html>
