@@ -19,23 +19,25 @@ const formatShortDate = (dateValue: string): string =>
   <section class="hero">
     <div class="container">
       <p class="eyebrow">At Home Plans</p>
-      <h1>Design Plans and Home Styling Guides, Together</h1>
+      <h1>Interior Design, Made Accessible</h1>
       <p>
-        Browse ready-made interior design plans and learn practical styling strategies from our
-        blog, all in one place.
+        Curated room plans, styling guides, and shopping lists — everything you need to design
+        a space you love.
       </p>
       <div class="heroCtas">
         <a href="/plans" class="btnPrimary">Browse Plans</a>
-        <a href="/blog" class="btnPrimary">Read the Blog</a>
+        <a href="/blog" class="btnSecondary">Read the Journal</a>
         <a href="https://www.etsy.com/shop/athomeplans" class="btnSecondary" target="_blank" rel="noreferrer">Shop on Etsy</a>
       </div>
     </div>
   </section>
 
+  <hr class="sectionDivider" />
+
   <section class="container sectionPad">
-    <div class="blogIntro">
+    <div class="sectionHead">
       <h2>Featured Plans</h2>
-      <p>Start with proven room layouts and curated shopping guidance.</p>
+      <p>Proven room layouts with curated shopping guidance — ready to make your own.</p>
     </div>
     <div class="postGrid">
       {featuredPlans.map((plan) => (
@@ -49,10 +51,15 @@ const formatShortDate = (dateValue: string): string =>
     </div>
   </section>
 
+  <hr class="sectionDivider" />
+
   <section class="container sectionPad">
     <div class="latestWrap">
       <div>
-        <h2>Latest Articles</h2>
+        <div class="sectionHead">
+          <h2>From the Journal</h2>
+          <p>Practical styling tips, room ideas, and design inspiration.</p>
+        </div>
         <div class="postGrid">
           {latestPosts.map((post) => (
             <article class="postCard">
@@ -64,7 +71,9 @@ const formatShortDate = (dateValue: string): string =>
           ))}
         </div>
       </div>
-      <EmailCapture />
+      <div>
+        <EmailCapture />
+      </div>
     </div>
   </section>
 </BaseLayout>

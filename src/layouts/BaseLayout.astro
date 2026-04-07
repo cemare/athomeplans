@@ -46,6 +46,12 @@ const year = new Date().getFullYear();
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
     <meta name="pinterest-rich-pin" content="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="siteHeader">
@@ -53,8 +59,8 @@ const year = new Date().getFullYear();
         <a href="/" class="brandLink">At Home Plans</a>
         <nav class="mainNav" aria-label="Main navigation">
           <a href="/plans">Plans</a>
-          <a href="/blog">Blog</a>
-          <a href="https://www.etsy.com/shop/athomeplans" target="_blank" rel="noreferrer">Etsy Shop</a>
+          <a href="/blog">Journal</a>
+          <a href="https://www.etsy.com/shop/athomeplans" target="_blank" rel="noreferrer">Shop</a>
         </nav>
       </div>
     </header>
@@ -64,11 +70,11 @@ const year = new Date().getFullYear();
     <footer class="siteFooter">
       <div class="container footerGrid">
         <div>
-          <h2>At Home Plans</h2>
+          <p class="footerBrand">At Home Plans</p>
           <p>Making interior design accessible with ready-made and custom room plans.</p>
         </div>
         <div>
-          <h2>Shop Links</h2>
+          <h2>Shop</h2>
           <ul>
             <li>
               <a href="https://www.etsy.com/shop/athomeplans" target="_blank" rel="noreferrer">Main Etsy Store</a>
@@ -79,7 +85,7 @@ const year = new Date().getFullYear();
           </ul>
         </div>
       </div>
-      <p class="copyright">&copy; {year} At Home Plans</p>
+      <p class="copyright container">&copy; {year} At Home Plans</p>
     </footer>
   </body>
 </html>
