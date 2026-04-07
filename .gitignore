@@ -38,3 +38,10 @@ next-env.d.ts
 
 # Prisma
 prisma/migrations/dev/
+
+# OpenNext
+.open-next
+.dev.vars
+
+# Wrangler local state
+.wrangler
