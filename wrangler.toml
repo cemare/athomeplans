@@ -1,5 +1,3 @@
 name = "athomeplans"
 compatibility_date = "2026-04-07"
-
-[assets]
-directory = "./dist"
+pages_build_output_dir = "dist"
