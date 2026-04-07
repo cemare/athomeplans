@@ -1,6 +1,3 @@
-import fs from "node:fs";
-import path from "node:path";
-
 export type DesignPlan = {
   slug: string;
   title: string;
@@ -15,34 +12,25 @@ export type DesignPlan = {
   shoppingLinks?: Array<{ label: string; url: string }>;
 };
 
-const plansDir = path.join(process.cwd(), "content", "plans");
-
-function readPlanFile(filePath: string): DesignPlan {
-  const raw = fs.readFileSync(filePath, "utf8");
-  const parsed = JSON.parse(raw) as DesignPlan;
-
-  if (!parsed.slug || !parsed.title || !parsed.summary || !Array.isArray(parsed.details)) {
-    throw new Error(`Invalid design plan schema: ${filePath}`);
-  }
-
-  return parsed;
-}
+const planModules = import.meta.glob<DesignPlan>("../../content/plans/*.json", {
+  eager: true,
+  import: "default",
+});
 
 function readAllPlans(): DesignPlan[] {
-  if (!fs.existsSync(plansDir)) return [];
+  const plans = Object.values(planModules);
 
-  const files = fs
-    .readdirSync(plansDir)
-    .filter((name) => name.endsWith(".json"))
-    .map((name) => path.join(plansDir, name));
+  for (const plan of plans) {
+    if (!plan.slug || !plan.title || !plan.summary || !Array.isArray(plan.details)) {
+      throw new Error(`Invalid design plan schema: ${plan.slug ?? "unknown"}`);
+    }
+  }
 
-  return files
-    .map(readPlanFile)
-    .sort((a, b) => {
-      if (a.featured && !b.featured) return -1;
-      if (!a.featured && b.featured) return 1;
-      return a.title.localeCompare(b.title);
-    });
+  return plans.sort((a, b) => {
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+    return a.title.localeCompare(b.title);
+  });
 }
 
 export function getAllPlans(): DesignPlan[] {

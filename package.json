@@ -4,34 +4,22 @@
   "private": true,
   "scripts": {
     "build": "astro build",
-    "cf:build": "astro build",
     "dev": "astro dev",
     "start": "astro dev",
     "preview": "astro preview",
     "lint": "astro check",
     "typecheck": "astro check",
-    "db:generate": "prisma generate",
-    "db:push": "prisma db push",
-    "db:migrate": "prisma migrate dev",
-    "db:seed": "tsx prisma/seed.ts",
-    "generate-types": "wrangler types",
     "deploy": "wrangler deploy",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
-    "@prisma/client": "^5.22.0",
-    "astro": "^5.8.0"
+    "astro": "^6.0.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.8",
     "@astrojs/cloudflare": "^13.1.7",
     "@types/node": "^22.0.0",
-    "prisma": "^5.22.0",
-    "tsx": "^4.19.2",
     "typescript": "^5.7.2",
     "wrangler": "^4.80.0"
-  },
-  "overrides": {
-    "vite": "^7"
   }
 }

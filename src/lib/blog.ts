@@ -1,6 +1,3 @@
-import fs from "node:fs";
-import path from "node:path";
-
 export type BlogPost = {
   slug: string;
   title: string;
@@ -18,30 +15,23 @@ type BlogQueryOptions = {
   includeDrafts?: boolean;
 };
 
-const contentDir = path.join(process.cwd(), "content", "posts");
-
-function readPostFile(filePath: string): BlogPost {
-  const raw = fs.readFileSync(filePath, "utf8");
-  const parsed = JSON.parse(raw) as BlogPost;
-
-  if (!parsed.slug || !parsed.title || !parsed.publishedAt || !parsed.body) {
-    throw new Error(`Invalid blog post schema: ${filePath}`);
-  }
-
-  return parsed;
-}
+const postModules = import.meta.glob<BlogPost>("../../content/posts/*.json", {
+  eager: true,
+  import: "default",
+});
 
 function readAllPosts(): BlogPost[] {
-  if (!fs.existsSync(contentDir)) return [];
+  const posts = Object.values(postModules);
 
-  const files = fs
-    .readdirSync(contentDir)
-    .filter((name) => name.endsWith(".json"))
-    .map((name) => path.join(contentDir, name));
+  for (const post of posts) {
+    if (!post.slug || !post.title || !post.publishedAt || !post.body) {
+      throw new Error(`Invalid blog post schema: ${post.slug ?? "unknown"}`);
+    }
+  }
 
-  return files
-    .map(readPostFile)
-    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+  return posts.sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
 }
 
 export function getAllPosts(options: BlogQueryOptions = {}): BlogPost[] {
@@ -58,7 +48,7 @@ export function getAllTags(options: BlogQueryOptions = {}): string[] {
 }
 
 export function canViewDrafts(previewToken?: string): boolean {
-  const configuredToken = process.env.BLOG_DRAFT_PREVIEW_TOKEN;
+  const configuredToken = import.meta.env.BLOG_DRAFT_PREVIEW_TOKEN;
   if (!configuredToken) return false;
   return previewToken === configuredToken;
 }
