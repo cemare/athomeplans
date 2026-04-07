@@ -24,7 +24,7 @@ jobs:
         run: npm ci
 
       - name: Generate Prisma client
-        run: npm run db:generate
+        run: npx prisma generate --schema=legacy/prisma/schema.prisma
 
       - name: Type check
         run: npm run typecheck
@@ -67,7 +67,8 @@ jobs:
         run: npm ci
 
       - name: Push DB schema
-        run: npm run db:push -- --accept-data-loss
+        run: npx prisma db push --schema=legacy/prisma/schema.prisma --accept-data-loss
 
       - name: Build
         run: npm run build
+
