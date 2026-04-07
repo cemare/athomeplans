@@ -11,6 +11,14 @@ export type PinterestPin = {
   image: string;
 };
 
+export type AffiliateProduct = {
+  name: string;
+  description: string;
+  url: string;
+  retailer: string;
+  priceRange?: string;
+};
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -23,6 +31,8 @@ export type BlogPost = {
   body: string;
   inlineImages?: InlineImage[];
   pinterestPins?: PinterestPin[];
+  affiliateProducts?: AffiliateProduct[];
+  hasAffiliateLinks?: boolean;
   draft?: boolean;
 };
 

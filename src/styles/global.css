@@ -523,9 +523,24 @@ a {
 
 .footerGrid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 2rem;
   padding: 3rem 0 2rem;
+}
+
+.affiliateNotice {
+  font-size: 0.78rem;
+  color: var(--subtle);
+  text-align: center;
+  padding: 1rem 0 0.5rem;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+.affiliateNotice a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .footerBrand {

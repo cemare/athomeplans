@@ -27,5 +27,28 @@
       "caption": "Editing out the non-essentials lets quality materials — warm wood, polished nickel — do the talking.",
       "afterParagraph": 4
     }
+  ],
+  "affiliateProducts": [
+    {
+      "name": "Brushed Brass Pendant Light",
+      "description": "A statement pendant in brushed brass — the kind of premium anchor that elevates an entire kitchen or dining room without requiring a redesign.",
+      "url": "https://www.wayfair.com/lighting/sb1/brass-pendant-lights-c415264.html",
+      "retailer": "Wayfair",
+      "priceRange": "$80–$250"
+    },
+    {
+      "name": "Natural Wood Serving Bowl",
+      "description": "A handturned acacia wood bowl. Beautiful enough to display on a counter or table, practical enough to use daily — the kind of object that bridges budget and premium.",
+      "url": "https://www.amazon.com/s?k=handturned+acacia+wood+bowl",
+      "retailer": "Amazon",
+      "priceRange": "$25–$55"
+    },
+    {
+      "name": "Simple Linen Throw Pillow Covers",
+      "description": "Solid linen pillow covers in warm neutrals. Swap out covers seasonally to refresh the room without replacing the inserts.",
+      "url": "https://www.amazon.com/s?k=linen+throw+pillow+covers+neutral",
+      "retailer": "Amazon",
+      "priceRange": "$18–$40"
+    }
   ]
 }

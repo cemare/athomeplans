@@ -1,0 +1,160 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Affiliate Disclosure"
+  description="At Home Plans affiliate disclosure policy — how we earn commissions and how it affects our content."
+  canonicalPath="/affiliate-disclosure"
+>
+  <div class="container sectionPad disclosurePage">
+    <h1>Affiliate Disclosure</h1>
+    <p class="lastUpdated">Last updated: April 2026</p>
+
+    <section>
+      <h2>Our Commitment to Transparency</h2>
+      <p>
+        At Home Plans participates in affiliate marketing programs. This means that when you click
+        on certain links on our website and make a purchase, we may receive a small commission —
+        at no additional cost to you.
+      </p>
+    </section>
+
+    <section>
+      <h2>What Are Affiliate Links?</h2>
+      <p>
+        Affiliate links are tracked URLs that allow retailers and brands to know that a customer
+        arrived at their site via our recommendation. When you make a purchase through one of these
+        links, we earn a percentage of the sale as a referral fee.
+      </p>
+      <p>
+        You can identify affiliate links on our site by the presence of
+        <code>rel="sponsored"</code> attributes. All affiliate links open in a new tab and are
+        clearly associated with the products or services we are recommending.
+      </p>
+    </section>
+
+    <section>
+      <h2>Which Programs Do We Participate In?</h2>
+      <p>
+        We may participate in affiliate programs with retailers and brands in the home decor,
+        furniture, and interior design space. Our "Shop Our Picks" page and product recommendations
+        within blog posts may contain affiliate links.
+      </p>
+      <p>
+        Current and past affiliate relationships may include programs with retailers such as
+        Amazon, Wayfair, West Elm, CB2, and similar home goods retailers. We will update this
+        disclosure as our affiliate relationships change.
+      </p>
+    </section>
+
+    <section>
+      <h2>Does This Affect Our Recommendations?</h2>
+      <p>
+        <strong>No.</strong> We only recommend products, services, and brands that we genuinely
+        believe will be useful and relevant to our audience. Affiliate relationships do not
+        influence the products we feature, the content we write, or the opinions we share.
+      </p>
+      <p>
+        We are committed to providing honest, useful interior design guidance. If we recommend
+        something, it's because we think it's worth your consideration — not because we earn a
+        commission.
+      </p>
+    </section>
+
+    <section>
+      <h2>FTC Compliance</h2>
+      <p>
+        In accordance with the Federal Trade Commission's (FTC) guidelines on endorsements and
+        testimonials (<a
+          href="https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+          target="_blank"
+          rel="noopener noreferrer"
+        >16 CFR Part 255</a>), we disclose our affiliate relationships clearly and prominently.
+      </p>
+      <p>
+        Any page or post containing affiliate links includes a notice indicating that we may earn
+        a commission from purchases made through those links.
+      </p>
+    </section>
+
+    <section>
+      <h2>Questions?</h2>
+      <p>
+        If you have any questions about our affiliate relationships or this disclosure, please
+        reach out through our website. We're happy to be transparent about how we operate.
+      </p>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .disclosurePage {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .disclosurePage h1 {
+    font-family: var(--font-sans);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .lastUpdated {
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin: 0 0 2.5rem;
+  }
+
+  .disclosurePage section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .disclosurePage section:last-child {
+    border-bottom: none;
+  }
+
+  .disclosurePage h2 {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  .disclosurePage p {
+    color: var(--muted);
+    line-height: 1.75;
+    margin: 0 0 1rem;
+    font-size: 0.95rem;
+  }
+
+  .disclosurePage p:last-child {
+    margin-bottom: 0;
+  }
+
+  .disclosurePage strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .disclosurePage code {
+    font-family: monospace;
+    font-size: 0.85em;
+    background: var(--surface);
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+  }
+
+  .disclosurePage a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+</style>

@@ -106,6 +106,40 @@ const formatLongDate = (dateValue: string): string =>
         </ul>
       </section>
 
+      {post.affiliateProducts && post.affiliateProducts.length > 0 && (
+        <section class="shopThisLook">
+          <div class="shopThisLookHeader">
+            <h2>Products We Used</h2>
+            <p class="affiliateDisclosureInline">
+              This section contains affiliate links. We may earn a commission at no extra cost to you.
+              <a href="/affiliate-disclosure">Learn more</a>.
+            </p>
+          </div>
+          <ul class="affiliateProductList">
+            {post.affiliateProducts.map((product) => (
+              <li class="affiliateProductItem">
+                <div class="affiliateProductInfo">
+                  <span class="affiliateProductRetailer">{product.retailer}</span>
+                  <strong class="affiliateProductName">{product.name}</strong>
+                  <p class="affiliateProductDesc">{product.description}</p>
+                  {product.priceRange && (
+                    <span class="affiliateProductPrice">{product.priceRange}</span>
+                  )}
+                </div>
+                <a
+                  href={product.url}
+                  target="_blank"
+                  rel="sponsored nofollow noopener"
+                  class="affiliateProductLink"
+                >
+                  Shop on {product.retailer} →
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {post.pinterestPins && post.pinterestPins.length > 0 && (
         <PinterestSlider
           pins={post.pinterestPins}
@@ -174,5 +208,120 @@ const formatLongDate = (dateValue: string): string =>
   .markdownBody :global(em) {
     font-style: italic;
     color: var(--color-muted, #6b6560);
+  }
+
+  .shopThisLook {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+
+  .shopThisLookHeader {
+    margin-bottom: 1.5rem;
+  }
+
+  .shopThisLookHeader h2 {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0 0 0.4rem;
+  }
+
+  .affiliateDisclosureInline {
+    font-size: 0.78rem;
+    color: var(--subtle);
+    margin: 0;
+  }
+
+  .affiliateDisclosureInline a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .affiliateProductList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .affiliateProductItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.25rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+  }
+
+  .affiliateProductInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .affiliateProductRetailer {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--subtle);
+  }
+
+  .affiliateProductName {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .affiliateProductDesc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .affiliateProductPrice {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-top: 0.15rem;
+  }
+
+  .affiliateProductLink {
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.4rem 0.8rem;
+    border-radius: 3px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+    align-self: center;
+  }
+
+  .affiliateProductLink:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  @media (max-width: 640px) {
+    .affiliateProductItem {
+      flex-direction: column;
+    }
+
+    .affiliateProductLink {
+      align-self: flex-start;
+    }
   }
 </style>

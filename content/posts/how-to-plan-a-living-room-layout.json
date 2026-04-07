@@ -31,5 +31,28 @@
       "caption": "Two chairs within easy conversation distance, grounded by a rug — this is what a well-proportioned seating group looks like.",
       "afterParagraph": 3
     }
+  ],
+  "affiliateProducts": [
+    {
+      "name": "Mid-Century Accent Chair",
+      "description": "A slender-legged upholstered chair that works well as the secondary seat in a conversation group. Available in multiple upholstery options.",
+      "url": "https://www.wayfair.com/furniture/sb1/accent-chairs-c415290.html",
+      "retailer": "Wayfair",
+      "priceRange": "$150–$350"
+    },
+    {
+      "name": "Round Jute Area Rug",
+      "description": "A natural jute rug that grounds seating arrangements without overwhelming the room. Machine-woven for durability.",
+      "url": "https://www.amazon.com/s?k=round+jute+area+rug",
+      "retailer": "Amazon",
+      "priceRange": "$60–$180"
+    },
+    {
+      "name": "Nesting Coffee Tables",
+      "description": "A set of two nesting tables that tuck together or spread apart as needed — the flexible piece that completes any living room layout.",
+      "url": "https://www.wayfair.com/furniture/sb1/nesting-tables-c415314.html",
+      "retailer": "Wayfair",
+      "priceRange": "$80–$220"
+    }
   ]
 }
