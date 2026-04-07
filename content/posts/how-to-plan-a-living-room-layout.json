@@ -21,14 +21,14 @@
   "inlineImages": [
     {
       "src": "/images/inline-living-room-focal-point.jpg",
-      "alt": "Eclectic living room with a fireplace as the focal point, flanked by gallery wall and comfortable seating",
-      "caption": "The fireplace becomes the room's anchor — seating arranged around it creates immediate visual order.",
+      "alt": "Living room with a corner fireplace as the focal point, sofa and coffee table arranged to face it",
+      "caption": "The fireplace anchors the corner — all seating orients toward it, giving the room an immediate sense of purpose.",
       "afterParagraph": 1
     },
     {
       "src": "/images/inline-living-room-layout.jpg",
-      "alt": "Open plan interior with island seating and clear walking lanes between zones",
-      "caption": "Clear walking lanes and defined zones make a space feel intentional and easy to move through.",
+      "alt": "Living room seating area with two accent chairs facing each other across a round side table on a patterned rug",
+      "caption": "Two chairs within easy conversation distance, grounded by a rug — this is what a well-proportioned seating group looks like.",
       "afterParagraph": 3
     }
   ]
