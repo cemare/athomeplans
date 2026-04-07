@@ -1,0 +1,22 @@
+{
+  "slug": "living-room-refresh",
+  "title": "Living Room Refresh Plan",
+  "category": "Living Room",
+  "style": "Warm Modern",
+  "estimatedBudgetUsd": 1200,
+  "roomSizeSqFt": 220,
+  "coverImage": "/images/cover-living-room-refresh.svg",
+  "featured": true,
+  "summary": "A high-impact layout and decor update using layered lighting, balanced seating, and texture-driven accents.",
+  "details": [
+    "Layout map with furniture placement zones for conversation and TV viewing.",
+    "Color and material guide for rugs, drapery, and soft neutral walls.",
+    "Shoppable checklist that mixes affordable anchor pieces with 1-2 statement upgrades."
+  ],
+  "shoppingLinks": [
+    {
+      "label": "Browse At Home Plans Etsy Collection",
+      "url": "https://www.etsy.com/shop/athomeplans"
+    }
+  ]
+}

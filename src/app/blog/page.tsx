@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import EmailCapture from "@/components/EmailCapture";
 import { getAllPosts, getAllTags } from "@/lib/blog";
@@ -29,6 +30,11 @@ export default function BlogIndexPage() {
           <div className="postGrid">
             {posts.map((post) => (
               <article className="postCard" key={post.slug}>
+                <Link href={`/blog/${post.slug}`} className="cardImageLink">
+                  <div className="coverMedia">
+                    <Image src={post.coverImage} alt={post.title} fill sizes="(max-width: 900px) 100vw, 420px" />
+                  </div>
+                </Link>
                 <p className="metaLine">
                   {new Date(post.publishedAt).toLocaleDateString("en-US", {
                     month: "short",

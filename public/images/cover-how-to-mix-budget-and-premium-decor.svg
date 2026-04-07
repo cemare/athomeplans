@@ -1,0 +1,175 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F2E8"/>
+      <stop offset="1" stop-color="#E5D0B5"/>
+    </linearGradient>
+    <linearGradient id="shelf" x1="0" y1="200" x2="0" y2="580" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2EBE0"/>
+      <stop offset="1" stop-color="#E8D8C4"/>
+    </linearGradient>
+    <linearGradient id="vase-premium" x1="260" y1="280" x2="260" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2A6B8A"/>
+      <stop offset="1" stop-color="#1A4A64"/>
+    </linearGradient>
+    <linearGradient id="vase-budget" x1="460" y1="310" x2="460" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D4A87A"/>
+      <stop offset="1" stop-color="#B08050"/>
+    </linearGradient>
+    <linearGradient id="divider" x1="390" y1="200" x2="390" y2="580" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C8A87A" stop-opacity="0.3"/>
+      <stop offset="0.5" stop-color="#C8A87A" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#C8A87A" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Left scene wall -->
+  <rect x="0" y="0" width="400" height="630" fill="#F5EEE4"/>
+  <!-- Right scene wall -->
+  <rect x="400" y="0" width="420" height="630" fill="#EDE3D5"/>
+
+  <!-- Subtle texture lines on walls -->
+  <line x1="0" y1="315" x2="400" y2="315" stroke="#E0D4C0" stroke-width="1" opacity="0.5"/>
+  <line x1="400" y1="315" x2="820" y2="315" stroke="#D8CCBA" stroke-width="1" opacity="0.5"/>
+
+  <!-- Divider line -->
+  <rect x="392" y="160" width="16" height="390" rx="8" fill="url(#divider)"/>
+
+  <!-- Labels at top -->
+  <rect x="80" y="50" width="250" height="44" rx="22" fill="#1F7A6D"/>
+  <text x="205" y="78" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">PREMIUM PIECE</text>
+
+  <rect x="440" y="50" width="250" height="44" rx="22" fill="#C8A87A"/>
+  <text x="565" y="78" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">BUDGET FIND</text>
+
+  <!-- Plus sign between labels -->
+  <text x="400" y="82" fill="#6C5F55" font-family="Arial, sans-serif" font-size="30" font-weight="300" text-anchor="middle" opacity="0.6">+</text>
+
+  <!-- === LEFT: Premium side === -->
+
+  <!-- Premium shelf -->
+  <rect x="50" y="430" width="310" height="16" rx="4" fill="#A87840"/>
+  <!-- Shelf bracket left -->
+  <rect x="70" y="430" width="8" height="60" rx="4" fill="#8A6030"/>
+  <!-- Shelf bracket right -->
+  <rect x="332" y="430" width="8" height="60" rx="4" fill="#8A6030"/>
+
+  <!-- Premium vase (tall, elegant) -->
+  <path d="M240 430 Q220 380 225 320 Q228 280 260 270 Q292 280 295 320 Q300 380 280 430 Z" fill="url(#vase-premium)"/>
+  <!-- Vase neck highlight -->
+  <path d="M248 430 Q232 380 236 325 Q239 292 255 282" stroke="rgba(255,255,255,0.2)" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- Vase pattern -->
+  <ellipse cx="260" cy="340" rx="20" ry="8" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+  <ellipse cx="260" cy="360" rx="22" ry="8" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+  <ellipse cx="260" cy="380" rx="20" ry="7" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+
+  <!-- Stems in premium vase -->
+  <line x1="252" y1="275" x2="235" y2="200" stroke="#5A8040" stroke-width="3" stroke-linecap="round"/>
+  <line x1="260" y1="272" x2="258" y2="185" stroke="#4A7030" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="268" y1="274" x2="285" y2="195" stroke="#5A8040" stroke-width="3" stroke-linecap="round"/>
+  <!-- Flower heads -->
+  <circle cx="235" cy="192" r="14" fill="#E87B5A"/>
+  <circle cx="235" cy="192" r="7" fill="#C85A38"/>
+  <circle cx="258" cy="178" r="12" fill="#F0A060"/>
+  <circle cx="258" cy="178" r="6" fill="#D07840"/>
+  <circle cx="285" cy="188" r="14" fill="#E87B5A"/>
+  <circle cx="285" cy="188" r="7" fill="#C85A38"/>
+
+  <!-- Art print on left wall -->
+  <rect x="60" y="155" width="155" height="190" rx="4" fill="#EAE0D5" stroke="#B8A888" stroke-width="2"/>
+  <rect x="70" y="165" width="135" height="170" rx="2" fill="#F5EEE4"/>
+  <!-- Abstract art shapes -->
+  <ellipse cx="138" cy="245" rx="40" ry="55" fill="#D4A87A" opacity="0.5"/>
+  <ellipse cx="158" cy="260" rx="30" ry="40" fill="#1F7A6D" opacity="0.35"/>
+  <circle cx="108" cy="220" r="22" fill="#E87B5A" opacity="0.4"/>
+  <rect x="115" y="290" width="50" height="6" rx="3" fill="#8A7060" opacity="0.4"/>
+  <!-- Frame label -->
+  <text x="138" y="365" fill="#A0948A" font-family="Arial, sans-serif" font-size="11" text-anchor="middle">Original Print</text>
+
+  <!-- Candle (premium) -->
+  <rect x="86" y="390" width="32" height="42" rx="6" fill="#F0E8D8" stroke="#D8C8A8" stroke-width="1.5"/>
+  <text x="102" y="412" fill="#C8A87A" font-family="Arial, sans-serif" font-size="9" text-anchor="middle">LUXURY</text>
+  <rect x="96" y="383" width="8" height="12" rx="3" fill="#D4B07A"/>
+  <!-- Flame -->
+  <ellipse cx="100" cy="379" rx="5" ry="7" fill="#FFB040" opacity="0.9"/>
+  <ellipse cx="100" cy="380" rx="3" ry="4" fill="#FFF080" opacity="0.8"/>
+
+  <!-- === RIGHT: Budget side === -->
+
+  <!-- Budget shelf -->
+  <rect x="430" y="430" width="350" height="16" rx="4" fill="#B09070"/>
+  <!-- Shelf bracket -->
+  <rect x="450" y="430" width="8" height="60" rx="4" fill="#907050"/>
+  <rect x="752" y="430" width="8" height="60" rx="4" fill="#907050"/>
+
+  <!-- Budget vase (shorter, simpler) -->
+  <path d="M440 430 Q435 400 440 370 Q445 345 460 340 Q475 345 480 370 Q485 400 480 430 Z" fill="url(#vase-budget)"/>
+  <!-- Vase rim -->
+  <ellipse cx="460" cy="340" rx="20" ry="7" fill="#C89060"/>
+  <!-- Simple stems -->
+  <line x1="455" y1="342" x2="448" y2="285" stroke="#6A9050" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="462" y1="340" x2="462" y2="270" stroke="#5A8040" stroke-width="2" stroke-linecap="round"/>
+  <line x1="468" y1="342" x2="475" y2="280" stroke="#6A9050" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Simple leaves -->
+  <ellipse cx="448" cy="285" rx="10" ry="18" fill="#5A8040" transform="rotate(-20 448 285)"/>
+  <ellipse cx="462" cy="272" rx="8" ry="15" fill="#4A7030"/>
+  <ellipse cx="475" cy="280" rx="10" ry="18" fill="#5A8040" transform="rotate(20 475 280)"/>
+
+  <!-- Thrifted mirror (budget) -->
+  <circle cx="618" cy="245" r="100" fill="#EAE0D5" stroke="#C8B090" stroke-width="12"/>
+  <circle cx="618" cy="245" r="88" fill="#D8EDF2" opacity="0.6"/>
+  <!-- Mirror highlight -->
+  <ellipse cx="590" cy="215" rx="22" ry="35" fill="white" opacity="0.2" transform="rotate(-30 590 215)"/>
+  <text x="618" y="367" fill="#A0948A" font-family="Arial, sans-serif" font-size="11" text-anchor="middle">Thrift Store Find</text>
+
+  <!-- Price tag on mirror -->
+  <rect x="680" y="155" width="64" height="30" rx="6" fill="#F5EEE4" stroke="#C8A87A" stroke-width="1.5"/>
+  <text x="712" y="175" fill="#8A6040" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">$12</text>
+  <line x1="680" y1="170" x2="660" y2="185" stroke="#C8A87A" stroke-width="1.5"/>
+
+  <!-- Candles (budget, grouped) -->
+  <rect x="530" y="400" width="22" height="32" rx="4" fill="#F5EEE4" stroke="#D8C8A8" stroke-width="1"/>
+  <rect x="558" y="408" width="18" height="24" rx="4" fill="#F0E8D8" stroke="#D8C8A8" stroke-width="1"/>
+  <rect x="582" y="403" width="24" height="29" rx="4" fill="#F5EEE4" stroke="#D8C8A8" stroke-width="1"/>
+  <!-- Flames -->
+  <ellipse cx="541" cy="396" rx="4" ry="6" fill="#FFB040" opacity="0.8"/>
+  <ellipse cx="567" cy="404" rx="3" ry="5" fill="#FFB040" opacity="0.8"/>
+  <ellipse cx="594" cy="399" rx="4" ry="6" fill="#FFB040" opacity="0.8"/>
+
+  <!-- Right text panel -->
+  <rect x="820" y="0" width="380" height="630" fill="#FFFBF5"/>
+  <rect x="820" y="0" width="6" height="630" fill="#C8A87A"/>
+
+  <!-- Category label -->
+  <rect x="855" y="80" width="150" height="32" rx="16" fill="#FFF0E0"/>
+  <text x="930" y="101" fill="#B07840" font-family="Arial, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Decor Strategy</text>
+
+  <!-- Main title -->
+  <text x="855" y="170" fill="#1F7A6D" font-family="Arial, sans-serif" font-size="40" font-weight="700">How to Mix</text>
+  <text x="855" y="218" fill="#1F7A6D" font-family="Arial, sans-serif" font-size="40" font-weight="700">Budget &amp;</text>
+  <text x="855" y="266" fill="#2B241F" font-family="Arial, sans-serif" font-size="40" font-weight="700">Premium Decor</text>
+
+  <!-- Subtitle line -->
+  <rect x="855" y="288" width="60" height="4" rx="2" fill="#C8A87A"/>
+
+  <!-- Excerpt -->
+  <text x="855" y="328" fill="#6C5F55" font-family="Arial, sans-serif" font-size="21">A repeatable strategy for</text>
+  <text x="855" y="356" fill="#6C5F55" font-family="Arial, sans-serif" font-size="21">blending affordable finds</text>
+  <text x="855" y="384" fill="#6C5F55" font-family="Arial, sans-serif" font-size="21">with statement pieces so</text>
+  <text x="855" y="412" fill="#6C5F55" font-family="Arial, sans-serif" font-size="21">your home looks curated.</text>
+
+  <!-- Tags -->
+  <rect x="855" y="465" width="80" height="28" rx="14" fill="#F4EFE6" stroke="#C8A87A" stroke-width="1"/>
+  <text x="895" y="484" fill="#6C5F55" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">Decor</text>
+  <rect x="945" y="465" width="80" height="28" rx="14" fill="#F4EFE6" stroke="#C8A87A" stroke-width="1"/>
+  <text x="985" y="484" fill="#6C5F55" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">Budget</text>
+  <rect x="1035" y="465" width="90" height="28" rx="14" fill="#F4EFE6" stroke="#C8A87A" stroke-width="1"/>
+  <text x="1080" y="484" fill="#6C5F55" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">Styling</text>
+
+  <!-- Branding -->
+  <text x="855" y="570" fill="#1F7A6D" font-family="Arial, sans-serif" font-size="22" font-weight="600">At Home Plans</text>
+  <text x="855" y="598" fill="#A0948A" font-family="Arial, sans-serif" font-size="16">athomeplans.com</text>
+</svg>

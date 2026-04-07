@@ -7,21 +7,20 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://athomeplans.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "At Home Plans Blog",
-    template: "%s | At Home Plans Blog",
+    default: "At Home Plans",
+    template: "%s | At Home Plans",
   },
   description:
-    "Interior design guides, floor plan ideas, and home styling inspiration from At Home Plans.",
+    "Interior design plans and blog guides from At Home Plans.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "At Home Plans Blog",
-    description:
-      "Interior design guides, floor plan ideas, and home styling inspiration from At Home Plans.",
-    siteName: "At Home Plans Blog",
+    title: "At Home Plans",
+    description: "Interior design plans and blog guides from At Home Plans.",
+    siteName: "At Home Plans",
     images: [
       {
         url: "/images/og-default.svg",
@@ -33,9 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "At Home Plans Blog",
-    description:
-      "Interior design guides, floor plan ideas, and home styling inspiration from At Home Plans.",
+    title: "At Home Plans",
+    description: "Interior design plans and blog guides from At Home Plans.",
     images: ["/images/og-default.svg"],
   },
   other: {
@@ -59,12 +57,10 @@ export default function RootLayout({
               At Home Plans
             </Link>
             <nav className="mainNav" aria-label="Main navigation">
+              <Link href="/plans">Plans</Link>
               <Link href="/blog">Blog</Link>
               <a href="https://www.etsy.com/shop/athomeplans" target="_blank" rel="noreferrer">
                 Etsy Shop
-              </a>
-              <a href="https://athomeplans.com" target="_blank" rel="noreferrer">
-                Main Site
               </a>
             </nav>
           </div>

@@ -1,0 +1,199 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4F0EA"/>
+      <stop offset="1" stop-color="#DDD0BC"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F4EE"/>
+      <stop offset="1" stop-color="#EDE5D8"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="400" x2="0" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D4C4A8"/>
+      <stop offset="1" stop-color="#BEA888"/>
+    </linearGradient>
+    <linearGradient id="headboard" x1="0" y1="240" x2="0" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4A4540"/>
+      <stop offset="1" stop-color="#2E2A26"/>
+    </linearGradient>
+    <linearGradient id="mattress" x1="100" y1="340" x2="100" y2="480" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0EAE0"/>
+      <stop offset="1" stop-color="#E0D8CC"/>
+    </linearGradient>
+    <linearGradient id="duvet" x1="100" y1="330" x2="100" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDFAF5"/>
+      <stop offset="1" stop-color="#EDE5D8"/>
+    </linearGradient>
+    <radialGradient id="lampglow" cx="0.5" cy="0.5" r="0.5">
+      <stop stop-color="#FFF8E8" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#FFF8E8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Scene -->
+  <rect x="0" y="0" width="790" height="630" fill="url(#wall)"/>
+  <rect x="0" y="400" width="790" height="230" fill="url(#floor)"/>
+
+  <!-- Subtle wall texture panels -->
+  <rect x="0" y="390" width="790" height="12" fill="#CDBFA8" opacity="0.5"/>
+
+  <!-- Soft wall paneling lines -->
+  <rect x="25" y="310" width="200" height="75" rx="3" fill="none" stroke="#E0D4C0" stroke-width="1.5" opacity="0.5"/>
+  <rect x="245" y="310" width="300" height="75" rx="3" fill="none" stroke="#E0D4C0" stroke-width="1.5" opacity="0.5"/>
+  <rect x="565" y="310" width="200" height="75" rx="3" fill="none" stroke="#E0D4C0" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Window with soft morning light -->
+  <rect x="530" y="40" width="200" height="240" rx="4" fill="#E8F4F8" opacity="0.7" stroke="#BDD0D4" stroke-width="3"/>
+  <line x1="630" y1="40" x2="630" y2="280" stroke="#BDD0D4" stroke-width="2"/>
+  <line x1="530" y1="160" x2="730" y2="160" stroke="#BDD0D4" stroke-width="2"/>
+  <!-- Morning glow from window -->
+  <rect x="533" y="43" width="95" height="115" fill="white" opacity="0.22"/>
+  <rect x="635" y="43" width="93" height="115" fill="white" opacity="0.14"/>
+
+  <!-- Linen curtain panels -->
+  <path d="M518 30 Q510 160 520 285" stroke="#E4D6C0" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.85"/>
+  <path d="M742 30 Q750 160 740 285" stroke="#E4D6C0" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.85"/>
+  <rect x="492" y="22" width="276" height="12" rx="6" fill="#B8A080"/>
+  <circle cx="494" cy="28" r="9" fill="#A89070"/>
+  <circle cx="766" cy="28" r="9" fill="#A89070"/>
+
+  <!-- Headboard (upholstered, arched) -->
+  <rect x="68" y="250" width="560" height="175" rx="16" fill="url(#headboard)"/>
+  <path d="M68 265 Q348 200 628 265" fill="#3A3530" />
+  <!-- Headboard tufting grid -->
+  <circle cx="168" cy="290" r="6" fill="#5A5550" opacity="0.6"/>
+  <circle cx="248" cy="290" r="6" fill="#5A5550" opacity="0.6"/>
+  <circle cx="328" cy="290" r="6" fill="#5A5550" opacity="0.6"/>
+  <circle cx="408" cy="290" r="6" fill="#5A5550" opacity="0.6"/>
+  <circle cx="488" cy="290" r="6" fill="#5A5550" opacity="0.6"/>
+  <circle cx="208" cy="340" r="6" fill="#5A5550" opacity="0.6"/>
+  <circle cx="288" cy="340" r="6" fill="#5A5550" opacity="0.6"/>
+  <circle cx="368" cy="340" r="6" fill="#5A5550" opacity="0.6"/>
+  <circle cx="448" cy="340" r="6" fill="#5A5550" opacity="0.6"/>
+  <!-- Headboard piping -->
+  <rect x="68" y="418" width="560" height="8" rx="4" fill="#5A5550"/>
+
+  <!-- Bed frame base -->
+  <rect x="50" y="430" width="596" height="100" rx="10" fill="#2E2A26"/>
+  <rect x="50" y="430" width="596" height="18" rx="8" fill="#3E3A36"/>
+
+  <!-- Mattress -->
+  <rect x="68" y="340" width="560" height="100" rx="6" fill="url(#mattress)"/>
+
+  <!-- Duvet / bedding -->
+  <rect x="68" y="340" width="560" height="95" rx="8" fill="url(#duvet)"/>
+  <!-- Duvet fold at top -->
+  <rect x="68" y="340" width="560" height="30" rx="8" fill="#F8F4EE"/>
+  <!-- Duvet subtle texture lines -->
+  <line x1="200" y1="370" x2="200" y2="435" stroke="#E0D8CC" stroke-width="1" opacity="0.7"/>
+  <line x1="350" y1="370" x2="350" y2="435" stroke="#E0D8CC" stroke-width="1" opacity="0.7"/>
+  <line x1="500" y1="370" x2="500" y2="435" stroke="#E0D8CC" stroke-width="1" opacity="0.7"/>
+
+  <!-- Pillows (set of 4) -->
+  <!-- Back row: 2 standard -->
+  <rect x="82" y="295" width="220" height="80" rx="14" fill="#F0EAE2" stroke="#D8CCBC" stroke-width="1.5"/>
+  <rect x="316" y="295" width="220" height="80" rx="14" fill="#F0EAE2" stroke="#D8CCBC" stroke-width="1.5"/>
+  <!-- Pillow seam lines -->
+  <line x1="192" y1="298" x2="192" y2="372" stroke="#D8CCBC" stroke-width="1" opacity="0.5"/>
+  <line x1="426" y1="298" x2="426" y2="372" stroke="#D8CCBC" stroke-width="1" opacity="0.5"/>
+
+  <!-- Front row: 2 accent pillows -->
+  <rect x="100" y="318" width="180" height="60" rx="12" fill="#D8CFC8" stroke="#C8BFB0" stroke-width="1.5"/>
+  <rect x="318" y="318" width="180" height="60" rx="12" fill="#C8B8A8" stroke="#B8A898" stroke-width="1.5"/>
+
+  <!-- Lumbar pillow center -->
+  <rect x="218" y="332" width="160" height="44" rx="10" fill="#3D7A6E" />
+  <!-- Lumbar pillow pattern -->
+  <line x1="235" y1="340" x2="235" y2="368" stroke="white" stroke-width="1" opacity="0.2"/>
+  <line x1="252" y1="338" x2="252" y2="370" stroke="white" stroke-width="1" opacity="0.2"/>
+  <line x1="340" y1="338" x2="340" y2="370" stroke="white" stroke-width="1" opacity="0.2"/>
+  <line x1="358" y1="340" x2="358" y2="368" stroke="white" stroke-width="1" opacity="0.2"/>
+
+  <!-- Bed legs -->
+  <rect x="70" y="522" width="20" height="40" rx="6" fill="#1E1A16"/>
+  <rect x="600" y="522" width="20" height="40" rx="6" fill="#1E1A16"/>
+
+  <!-- Left nightstand -->
+  <rect x="-5" y="430" width="90" height="90" rx="8" fill="#8A7050"/>
+  <rect x="-5" y="428" width="90" height="16" rx="6" fill="#9A8060"/>
+  <!-- Drawer line -->
+  <line x1="-5" y1="472" x2="85" y2="472" stroke="#6A5038" stroke-width="1.5"/>
+  <!-- Drawer pull -->
+  <circle cx="40" cy="450" r="5" fill="#B89870"/>
+
+  <!-- Left lamp -->
+  <rect x="22" y="358" width="10" height="72" rx="3" fill="#A08868"/>
+  <ellipse cx="27" cy="352" rx="38" ry="18" fill="#F5EEE0"/>
+  <ellipse cx="27" cy="352" rx="38" ry="18" fill="none" stroke="#C8B898" stroke-width="2"/>
+  <!-- Lamp glow -->
+  <ellipse cx="27" cy="370" rx="50" ry="30" fill="url(#lampglow)"/>
+
+  <!-- Small items on left nightstand -->
+  <!-- Book -->
+  <rect x="5" y="412" width="45" height="18" rx="2" fill="#5A7A8A" transform="rotate(-4 28 421)"/>
+  <!-- Water glass -->
+  <path d="M68 430 Q64 430 62 415 Q60 400 65 395 Q72 393 74 395 Q79 400 77 415 Q75 430 71 430 Z" fill="#D8EEF4" opacity="0.8"/>
+
+  <!-- Right nightstand -->
+  <rect x="615" y="430" width="90" height="90" rx="8" fill="#8A7050"/>
+  <rect x="615" y="428" width="90" height="16" rx="6" fill="#9A8060"/>
+  <line x1="615" y1="472" x2="705" y2="472" stroke="#6A5038" stroke-width="1.5"/>
+  <circle cx="660" cy="450" r="5" fill="#B89870"/>
+
+  <!-- Right lamp -->
+  <rect x="668" y="358" width="10" height="72" rx="3" fill="#A08868"/>
+  <ellipse cx="673" cy="352" rx="38" ry="18" fill="#F5EEE0"/>
+  <ellipse cx="673" cy="352" rx="38" ry="18" fill="none" stroke="#C8B898" stroke-width="2"/>
+  <ellipse cx="673" cy="370" rx="50" ry="30" fill="url(#lampglow)"/>
+
+  <!-- Small plant on right nightstand -->
+  <rect x="628" y="408" width="28" height="24" rx="5" fill="#7A6040"/>
+  <ellipse cx="642" cy="400" rx="16" ry="22" fill="#3D7A45" transform="rotate(-10 642 400)"/>
+  <ellipse cx="642" cy="400" rx="16" ry="22" fill="#4A8A50" transform="rotate(15 642 400)"/>
+
+  <!-- Rug under bed -->
+  <ellipse cx="360" cy="560" rx="320" ry="55" fill="#C0A888" opacity="0.45"/>
+  <ellipse cx="360" cy="560" rx="295" ry="46" fill="none" stroke="#A89070" stroke-width="2" opacity="0.35"/>
+  <ellipse cx="360" cy="560" rx="260" ry="38" fill="none" stroke="#A89070" stroke-width="1" opacity="0.2"/>
+
+  <!-- Right text panel -->
+  <rect x="820" y="0" width="380" height="630" fill="#FFFBF5"/>
+  <rect x="820" y="0" width="6" height="630" fill="#4A4540"/>
+
+  <!-- Badge -->
+  <rect x="855" y="80" width="160" height="32" rx="16" fill="#F4F0EC"/>
+  <text x="935" y="101" fill="#4A4540" font-family="Arial, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Design Plan</text>
+
+  <!-- Main title -->
+  <text x="855" y="178" fill="#4A4540" font-family="Arial, sans-serif" font-size="52" font-weight="700">Bedroom</text>
+  <text x="855" y="238" fill="#1F7A6D" font-family="Arial, sans-serif" font-size="52" font-weight="700">Reset</text>
+
+  <!-- Accent line -->
+  <rect x="855" y="262" width="80" height="5" rx="2.5" fill="#C8A87A"/>
+
+  <!-- Description -->
+  <text x="855" y="308" fill="#6C5F55" font-family="Arial, sans-serif" font-size="21">A calming bedroom</text>
+  <text x="855" y="336" fill="#6C5F55" font-family="Arial, sans-serif" font-size="21">package focused on</text>
+  <text x="855" y="364" fill="#6C5F55" font-family="Arial, sans-serif" font-size="21">storage relief, symmetry,</text>
+  <text x="855" y="392" fill="#6C5F55" font-family="Arial, sans-serif" font-size="21">and low-clutter styling.</text>
+
+  <!-- Divider -->
+  <rect x="855" y="428" width="330" height="1" fill="#E0D4C0"/>
+
+  <!-- Style tag -->
+  <text x="870" y="462" fill="#4A4540" font-family="Arial, sans-serif" font-size="16" font-weight="600">Soft Minimal</text>
+  <text x="870" y="484" fill="#A0948A" font-family="Arial, sans-serif" font-size="14">Bedroom · 180 sqft · from $900</text>
+
+  <!-- Tags -->
+  <rect x="855" y="508" width="110" height="28" rx="14" fill="#F4EFE6" stroke="#C8A87A" stroke-width="1"/>
+  <text x="910" y="527" fill="#6C5F55" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">Bedroom</text>
+  <rect x="975" y="508" width="110" height="28" rx="14" fill="#F4EFE6" stroke="#C8A87A" stroke-width="1"/>
+  <text x="1030" y="527" fill="#6C5F55" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">Soft Minimal</text>
+
+  <!-- Branding -->
+  <text x="855" y="570" fill="#1F7A6D" font-family="Arial, sans-serif" font-size="22" font-weight="600">At Home Plans</text>
+  <text x="855" y="598" fill="#A0948A" font-family="Arial, sans-serif" font-size="16">athomeplans.com</text>
+</svg>

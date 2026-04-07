@@ -1,0 +1,202 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6F0E6"/>
+      <stop offset="1" stop-color="#E0CAA8"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FAF6EF"/>
+      <stop offset="1" stop-color="#EDE3D0"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="420" x2="0" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D8C4A4"/>
+      <stop offset="1" stop-color="#C4A880"/>
+    </linearGradient>
+    <linearGradient id="sofa" x1="100" y1="350" x2="100" y2="490" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C8956A"/>
+      <stop offset="1" stop-color="#A87050"/>
+    </linearGradient>
+    <linearGradient id="table" x1="0" y1="0" x2="0" y2="1" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8A6840"/>
+      <stop offset="1" stop-color="#6A4C28"/>
+    </linearGradient>
+    <radialGradient id="sunlight" cx="0.62" cy="0" r="0.7" gradientUnits="objectBoundingBox">
+      <stop stop-color="#FFFCE8" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#F6F0E6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Scene area -->
+  <rect x="0" y="0" width="790" height="630" fill="url(#wall)"/>
+  <rect x="0" y="420" width="790" height="210" fill="url(#floor)"/>
+
+  <!-- Sunlight overlay -->
+  <rect x="0" y="0" width="790" height="420" fill="url(#sunlight)"/>
+
+  <!-- Wainscoting / wall paneling -->
+  <rect x="0" y="330" width="790" height="8" fill="#D4C0A0" opacity="0.5"/>
+  <rect x="30" y="340" width="240" height="75" rx="4" fill="none" stroke="#DDD0BA" stroke-width="2" opacity="0.6"/>
+  <rect x="290" y="340" width="240" height="75" rx="4" fill="none" stroke="#DDD0BA" stroke-width="2" opacity="0.6"/>
+  <rect x="550" y="340" width="210" height="75" rx="4" fill="none" stroke="#DDD0BA" stroke-width="2" opacity="0.6"/>
+
+  <!-- Large arched window -->
+  <rect x="350" y="40" width="230" height="265" rx="115" fill="#D8EEF4" opacity="0.75" stroke="#C0D4D8" stroke-width="3"/>
+  <line x1="465" y1="40" x2="465" y2="305" stroke="#C0D4D8" stroke-width="2"/>
+  <line x1="350" y1="175" x2="580" y2="175" stroke="#C0D4D8" stroke-width="2"/>
+  <!-- Window arch fill highlight -->
+  <path d="M355 175 Q355 45 465 45 Q575 45 575 175" fill="white" opacity="0.15"/>
+
+  <!-- Linen curtains -->
+  <path d="M338 30 Q330 170 338 310" stroke="#E8D8C0" stroke-width="24" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <path d="M592 30 Q600 170 592 310" stroke="#E8D8C0" stroke-width="24" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <!-- Curtain rod -->
+  <rect x="310" y="24" width="310" height="10" rx="5" fill="#B09070"/>
+  <circle cx="312" cy="29" r="8" fill="#A08060"/>
+  <circle cx="618" cy="29" r="8" fill="#A08060"/>
+
+  <!-- Gallery wall (left) -->
+  <!-- Frame 1 large -->
+  <rect x="38" y="55" width="175" height="140" rx="3" fill="#EAE0D5" stroke="#C8B898" stroke-width="3"/>
+  <rect x="46" y="63" width="159" height="124" rx="1" fill="#F2EAE0"/>
+  <!-- Art: arch/arch shape abstract -->
+  <path d="M80 175 Q80 120 125 118 Q170 120 170 175" fill="#1F7A6D" opacity="0.35"/>
+  <path d="M96 175 Q96 135 125 133 Q154 135 154 175" fill="#1F7A6D" opacity="0.3"/>
+  <rect x="60" y="170" width="130" height="8" fill="#EAE0D5"/>
+
+  <!-- Frame 2 small square -->
+  <rect x="228" y="70" width="100" height="100" rx="3" fill="#EAE0D5" stroke="#C8B898" stroke-width="2"/>
+  <rect x="235" y="77" width="86" height="86" rx="1" fill="#F8F0E8"/>
+  <!-- Art: circle abstract -->
+  <circle cx="278" cy="120" r="28" fill="#E8A870" opacity="0.5"/>
+  <circle cx="278" cy="120" r="16" fill="#C87840" opacity="0.4"/>
+
+  <!-- Frame 3 narrow tall -->
+  <rect x="228" y="185" width="100" height="130" rx="3" fill="#EAE0D5" stroke="#C8B898" stroke-width="2"/>
+  <rect x="235" y="192" width="86" height="116" rx="1" fill="#F2EAE0"/>
+  <!-- Art: line art plant -->
+  <line x1="278" y1="300" x2="278" y2="235" stroke="#5A8040" stroke-width="2"/>
+  <ellipse cx="265" cy="258" rx="12" ry="20" fill="#6A9450" opacity="0.7" transform="rotate(-20 265 258)"/>
+  <ellipse cx="290" cy="248" rx="12" ry="20" fill="#5A8040" opacity="0.7" transform="rotate(20 290 248)"/>
+  <ellipse cx="278" cy="236" rx="10" ry="16" fill="#7AAA60" opacity="0.7"/>
+
+  <!-- Large sectional sofa -->
+  <!-- Sofa body main -->
+  <rect x="55" y="380" width="480" height="100" rx="14" fill="url(#sofa)"/>
+  <!-- Sofa back -->
+  <rect x="55" y="340" width="480" height="50" rx="12" fill="#B87A55"/>
+  <!-- Chaise extension -->
+  <rect x="475" y="380" width="150" height="70" rx="14" fill="#C8956A"/>
+  <rect x="475" y="340" width="150" height="50" rx="10" fill="#B87A55"/>
+
+  <!-- Cushions main -->
+  <rect x="70" y="383" width="110" height="88" rx="10" fill="#D4A07A" stroke="#B87A55" stroke-width="1"/>
+  <rect x="195" y="383" width="110" height="88" rx="10" fill="#C89070" stroke="#B87A55" stroke-width="1"/>
+  <rect x="320" y="383" width="110" height="88" rx="10" fill="#D4A07A" stroke="#B87A55" stroke-width="1"/>
+  <rect x="440" y="383" width="100" height="88" rx="10" fill="#C89070" stroke="#B87A55" stroke-width="1"/>
+
+  <!-- Chaise cushion -->
+  <rect x="490" y="355" width="125" height="65" rx="10" fill="#D4A07A" stroke="#B87A55" stroke-width="1"/>
+
+  <!-- Sofa arms -->
+  <rect x="44" y="348" width="28" height="132" rx="12" fill="#A87050"/>
+  <rect x="607" y="348" width="28" height="92" rx="12" fill="#A87050"/>
+
+  <!-- Sofa legs -->
+  <rect x="70" y="476" width="16" height="22" rx="4" fill="#7A5030"/>
+  <rect x="290" y="476" width="16" height="22" rx="4" fill="#7A5030"/>
+  <rect x="505" y="476" width="16" height="22" rx="4" fill="#7A5030"/>
+
+  <!-- Decorative throw -->
+  <path d="M320 345 Q350 355 380 345 Q395 365 370 380 Q350 388 330 380 Q308 368 320 345" fill="#E8D0A0" opacity="0.85"/>
+
+  <!-- Accent pillows on sofa -->
+  <rect x="432" y="344" width="52" height="52" rx="8" fill="#3D7A6E" transform="rotate(-8 458 370)"/>
+  <rect x="84" y="344" width="48" height="48" rx="8" fill="#E87B5A" transform="rotate(7 108 368)"/>
+  <!-- Pillow pattern on teal -->
+  <line x1="435" y1="356" x2="480" y2="380" stroke="white" stroke-width="1.5" opacity="0.3"/>
+  <line x1="435" y1="368" x2="480" y2="392" stroke="white" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- Round coffee table -->
+  <ellipse cx="320" cy="540" rx="140" ry="55" fill="#8A6840"/>
+  <ellipse cx="320" cy="535" rx="140" ry="50" fill="#9A7848"/>
+  <ellipse cx="320" cy="530" rx="135" ry="46" fill="#A08050"/>
+  <!-- Table top items -->
+  <ellipse cx="295" cy="525" rx="28" ry="10" fill="#C8A870" opacity="0.6"/>
+  <!-- Books stack -->
+  <rect x="330" y="510" width="55" height="10" rx="2" fill="#3D7A6E" transform="rotate(-5 358 515)"/>
+  <rect x="333" y="502" width="50" height="10" rx="2" fill="#E87B5A" transform="rotate(-2 358 507)"/>
+  <!-- Small vase on table -->
+  <path d="M290 525 Q284 510 286 495 Q288 482 295 480 Q302 482 304 495 Q306 510 300 525 Z" fill="#1F7A6D"/>
+  <!-- Twig in vase -->
+  <line x1="295" y1="481" x2="292" y2="458" stroke="#7A9050" stroke-width="2"/>
+  <line x1="295" y1="476" x2="305" y2="455" stroke="#7A9050" stroke-width="1.5"/>
+  <circle cx="292" cy="456" r="5" fill="#A8C870"/>
+  <circle cx="305" cy="454" r="4" fill="#A8C870"/>
+
+  <!-- Table legs (hairpin style) -->
+  <line x1="210" y1="540" x2="195" y2="588" stroke="#6A4820" stroke-width="5" stroke-linecap="round"/>
+  <line x1="210" y1="540" x2="218" y2="590" stroke="#6A4820" stroke-width="5" stroke-linecap="round"/>
+  <line x1="430" y1="540" x2="440" y2="590" stroke="#6A4820" stroke-width="5" stroke-linecap="round"/>
+  <line x1="430" y1="540" x2="422" y2="590" stroke="#6A4820" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Floor lamp -->
+  <line x1="670" y1="590" x2="670" y2="165" stroke="#8A7060" stroke-width="6" stroke-linecap="round"/>
+  <!-- Lamp arm -->
+  <path d="M670 165 Q695 145 720 155" stroke="#8A7060" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- Lamp shade -->
+  <path d="M700 155 Q720 148 742 155 Q748 172 734 185 Q720 188 706 185 Q698 172 700 155" fill="#F0E8D0"/>
+  <path d="M700 155 Q720 148 742 155" stroke="#C8B098" stroke-width="2" fill="none"/>
+  <!-- Lamp glow -->
+  <ellipse cx="721" cy="188" rx="30" ry="18" fill="#FFF8E0" opacity="0.35"/>
+
+  <!-- Large plant (fiddle leaf) -->
+  <rect x="700" y="480" width="55" height="120" rx="10" fill="#6A4820"/>
+  <rect x="707" y="478" width="41" height="12" rx="4" fill="#8A6840"/>
+  <!-- Leaves -->
+  <ellipse cx="727" cy="430" rx="38" ry="65" fill="#2D6A35" transform="rotate(-12 727 430)"/>
+  <ellipse cx="727" cy="430" rx="35" ry="60" fill="#357A3D" transform="rotate(8 727 430)"/>
+  <ellipse cx="700" cy="460" rx="28" ry="50" fill="#2D6A35" transform="rotate(-25 700 460)"/>
+  <ellipse cx="755" cy="445" rx="30" ry="52" fill="#3D8A45" transform="rotate(20 755 445)"/>
+  <!-- Leaf veins -->
+  <line x1="718" y1="490" x2="710" y2="380" stroke="#1D4A22" stroke-width="1.5" opacity="0.4"/>
+  <line x1="728" y1="492" x2="730" y2="375" stroke="#1D4A22" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Area rug -->
+  <ellipse cx="340" cy="560" rx="310" ry="60" fill="#B89070" opacity="0.4"/>
+  <ellipse cx="340" cy="560" rx="290" ry="52" fill="none" stroke="#A07850" stroke-width="2" opacity="0.3"/>
+
+  <!-- Right text panel -->
+  <rect x="820" y="0" width="380" height="630" fill="#FFFBF5"/>
+  <rect x="820" y="0" width="6" height="630" fill="#1F7A6D"/>
+
+  <!-- Badge -->
+  <rect x="855" y="80" width="160" height="32" rx="16" fill="#E8F4F1"/>
+  <text x="935" y="101" fill="#1F7A6D" font-family="Arial, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Design Plan</text>
+
+  <!-- Main title -->
+  <text x="855" y="178" fill="#1F7A6D" font-family="Arial, sans-serif" font-size="52" font-weight="700">Living Room</text>
+  <text x="855" y="238" fill="#2B241F" font-family="Arial, sans-serif" font-size="52" font-weight="700">Refresh</text>
+
+  <!-- Accent line -->
+  <rect x="855" y="262" width="80" height="5" rx="2.5" fill="#C8A87A"/>
+
+  <!-- Description -->
+  <text x="855" y="308" fill="#6C5F55" font-family="Arial, sans-serif" font-size="21">Warm up your living</text>
+  <text x="855" y="336" fill="#6C5F55" font-family="Arial, sans-serif" font-size="21">space with furniture</text>
+  <text x="855" y="364" fill="#6C5F55" font-family="Arial, sans-serif" font-size="21">placement, layered</text>
+  <text x="855" y="392" fill="#6C5F55" font-family="Arial, sans-serif" font-size="21">lighting &amp; soft textiles.</text>
+
+  <!-- Details row -->
+  <rect x="855" y="435" width="340" height="1" fill="#E0D4C0"/>
+
+  <!-- Stats -->
+  <text x="870" y="472" fill="#1F7A6D" font-family="Arial, sans-serif" font-size="24" font-weight="700">Full Plan</text>
+  <text x="870" y="496" fill="#A0948A" font-family="Arial, sans-serif" font-size="15">Furniture · Lighting · Decor</text>
+
+  <!-- Branding -->
+  <text x="855" y="570" fill="#1F7A6D" font-family="Arial, sans-serif" font-size="22" font-weight="600">At Home Plans</text>
+  <text x="855" y="598" fill="#A0948A" font-family="Arial, sans-serif" font-size="16">athomeplans.com</text>
+</svg>

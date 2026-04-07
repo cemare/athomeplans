@@ -156,6 +156,29 @@ a:hover {
   padding: 1rem;
 }
 
+.cardImageLink {
+  display: block;
+  margin: -0.2rem -0.2rem 0.8rem;
+}
+
+.coverMedia {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  aspect-ratio: 16 / 10;
+  background: #f1e8db;
+}
+
+.coverMedia img {
+  object-fit: cover;
+}
+
+.detailCoverMedia {
+  margin: 0.8rem 0 1rem;
+  aspect-ratio: 16 / 9;
+}
+
 .postCard h2,
 .postCard h3 {
   margin: 0.4rem 0 0.5rem;

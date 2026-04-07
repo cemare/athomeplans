@@ -11,6 +11,11 @@ export type BlogPost = {
   tags: string[];
   etsyLinks: Array<{ label: string; url: string }>;
   body: string;
+  draft?: boolean;
+};
+
+type BlogQueryOptions = {
+  includeDrafts?: boolean;
 };
 
 const contentDir = path.join(process.cwd(), "content", "posts");
@@ -26,7 +31,7 @@ function readPostFile(filePath: string): BlogPost {
   return parsed;
 }
 
-export function getAllPosts(): BlogPost[] {
+function readAllPosts(): BlogPost[] {
   if (!fs.existsSync(contentDir)) return [];
 
   const files = fs
@@ -39,11 +44,21 @@ export function getAllPosts(): BlogPost[] {
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 }
 
-export function getPostBySlug(slug: string): BlogPost | null {
-  const post = getAllPosts().find((entry) => entry.slug === slug);
+export function getAllPosts(options: BlogQueryOptions = {}): BlogPost[] {
+  return readAllPosts().filter((post) => (options.includeDrafts ? true : !post.draft));
+}
+
+export function getPostBySlug(slug: string, options: BlogQueryOptions = {}): BlogPost | null {
+  const post = getAllPosts(options).find((entry) => entry.slug === slug);
   return post ?? null;
 }
 
-export function getAllTags(): string[] {
-  return [...new Set(getAllPosts().flatMap((post) => post.tags))].sort();
+export function getAllTags(options: BlogQueryOptions = {}): string[] {
+  return [...new Set(getAllPosts(options).flatMap((post) => post.tags))].sort();
+}
+
+export function canViewDrafts(previewToken?: string): boolean {
+  const configuredToken = process.env.BLOG_DRAFT_PREVIEW_TOKEN;
+  if (!configuredToken) return false;
+  return previewToken === configuredToken;
 }

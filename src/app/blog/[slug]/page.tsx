@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 
@@ -91,6 +92,9 @@ export default async function BlogPostPage({ params }: Props) {
         </p>
         <h1>{post.title}</h1>
         <p className="lead">{post.excerpt}</p>
+        <div className="coverMedia detailCoverMedia">
+          <Image src={post.coverImage} alt={post.title} fill sizes="(max-width: 900px) 100vw, 760px" priority />
+        </div>
 
         <div className="tagRow">
           {post.tags.map((tag) => (

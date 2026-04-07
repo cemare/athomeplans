@@ -1,21 +1,26 @@
 import Link from "next/link";
 import EmailCapture from "@/components/EmailCapture";
 import { getAllPosts } from "@/lib/blog";
+import { getAllPlans } from "@/lib/plans";
 
 export default function HomePage() {
   const latestPosts = getAllPosts().slice(0, 3);
+  const featuredPlans = getAllPlans().filter((plan) => plan.featured).slice(0, 3);
 
   return (
     <div>
       <section className="hero">
         <div className="container">
-          <p className="eyebrow">At Home Plans Blog</p>
-          <h1>Design Ideas You Can Actually Use at Home</h1>
+          <p className="eyebrow">At Home Plans</p>
+          <h1>Design Plans and Home Styling Guides, Together</h1>
           <p>
-            Weekly guides for furniture layout, decor, and floor-plan decisions that help you style
-            your space faster.
+            Browse ready-made interior design plans and learn practical styling strategies from our
+            blog, all in one place.
           </p>
           <div className="heroCtas">
+            <Link href="/plans" className="btnPrimary">
+              Browse Plans
+            </Link>
             <Link href="/blog" className="btnPrimary">
               Read the Blog
             </Link>
@@ -28,6 +33,29 @@ export default function HomePage() {
               Shop on Etsy
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="container sectionPad">
+        <div className="blogIntro">
+          <h2>Featured Plans</h2>
+          <p>Start with proven room layouts and curated shopping guidance.</p>
+        </div>
+        <div className="postGrid">
+          {featuredPlans.map((plan) => (
+            <article className="postCard" key={plan.slug}>
+              <p className="metaLine">
+                {plan.category} · {plan.style}
+              </p>
+              <h3>
+                <Link href={`/plans/${plan.slug}`}>{plan.title}</Link>
+              </h3>
+              <p>{plan.summary}</p>
+              <Link href={`/plans/${plan.slug}`} className="readMoreLink">
+                View plan
+              </Link>
+            </article>
+          ))}
         </div>
       </section>
 

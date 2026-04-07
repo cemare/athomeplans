@@ -1,0 +1,22 @@
+{
+  "slug": "bedroom-reset",
+  "title": "Bedroom Reset Plan",
+  "category": "Bedroom",
+  "style": "Soft Minimal",
+  "estimatedBudgetUsd": 900,
+  "roomSizeSqFt": 180,
+  "coverImage": "/images/cover-bedroom-reset.svg",
+  "featured": true,
+  "summary": "A calming bedroom package focused on storage relief, symmetry, and low-clutter styling.",
+  "details": [
+    "Furniture placement plan to improve flow around the bed and windows.",
+    "Nightstand and lighting pairing recommendations for better function.",
+    "Styling list for bedding, art, and finishing touches with clear budget ranges."
+  ],
+  "shoppingLinks": [
+    {
+      "label": "See Matching Decor on Etsy",
+      "url": "https://www.etsy.com/shop/athomeplans?section_id=0"
+    }
+  ]
+}
