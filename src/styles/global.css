@@ -3,15 +3,13 @@
 }
 
 :root {
-  --bg: #faf9f7;
+  --bg: #ffffff;
   --surface: #ffffff;
-  --text: #111110;
-  --muted: #756f67;
-  --subtle: #b8b0a6;
-  --border: #e6e0d8;
-  --accent: #8c6a4a;
-  --accent-light: #c49a72;
-  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --text: #1a1a18;
+  --muted: #6b6b68;
+  --subtle: #ababab;
+  --border: #e8e8e4;
+  --accent: #1b2a4a;
   --font-sans: "DM Sans", "Helvetica Neue", Arial, sans-serif;
   --radius: 4px;
   --radius-lg: 8px;
@@ -45,7 +43,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
@@ -59,10 +57,10 @@ a {
 }
 
 .brandLink {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   color: var(--text);
 }
 
@@ -106,13 +104,13 @@ a {
 }
 
 .hero h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(2.8rem, 5vw, 5rem);
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.08;
   margin: 0 0 1.5rem;
   max-width: 16ch;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .hero p {
@@ -146,31 +144,32 @@ a {
 }
 
 .btnPrimary {
-  background: var(--text);
+  background: var(--accent);
   color: #fff;
-  border: 1px solid var(--text);
+  border: 1px solid var(--accent);
 }
 
 .btnPrimary:hover {
-  background: #2a2a28;
+  background: #0e1a2e;
+  border-color: #0e1a2e;
   color: #fff;
 }
 
 .btnSecondary {
   background: transparent;
-  color: var(--muted);
-  border: 1px solid var(--border);
+  color: var(--accent);
+  border: 1px solid var(--accent);
 }
 
 .btnSecondary:hover {
-  border-color: var(--muted);
-  color: var(--text);
+  background: var(--accent);
+  color: #fff;
 }
 
 /* ── Sections ── */
 
 .sectionPad {
-  padding: 3.5rem 0 5rem;
+  padding: 4rem 0 5.5rem;
 }
 
 .sectionHead {
@@ -178,11 +177,11 @@ a {
 }
 
 .sectionHead h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1.8rem, 3vw, 2.6rem);
-  font-weight: 500;
+  font-weight: 300;
   margin: 0 0 0.5rem;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .sectionHead p {
@@ -196,13 +195,13 @@ a {
 .latestWrap {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 3rem;
+  gap: 4rem;
 }
 
 .postGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
 }
 
 /* ── Cards ── */
@@ -218,8 +217,8 @@ a {
 }
 
 .postCard:hover {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
-  border-color: #cec7be;
+  box-shadow: 0 4px 24px rgba(27, 42, 74, 0.08);
+  border-color: #c8ccd6;
 }
 
 .cardImageLink {
@@ -232,7 +231,7 @@ a {
   overflow: hidden;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   aspect-ratio: 16 / 10;
-  background: #ede8e0;
+  background: #f4f5f7;
 }
 
 .coverMedia img {
@@ -261,11 +260,11 @@ a {
 
 .postCard h2,
 .postCard h3 {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 500;
   margin: 0.35rem 0 0.5rem;
-  line-height: 1.25;
+  line-height: 1.3;
 }
 
 .postCard h2 a,
@@ -322,15 +321,15 @@ a {
 /* ── Blog layout ── */
 
 .blogIntro {
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .blogIntro h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 500;
+  font-weight: 300;
   margin: 0 0 0.75rem;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .blogIntro p {
@@ -342,7 +341,7 @@ a {
 .blogLayout {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 3rem;
+  gap: 4rem;
 }
 
 .blogSidebar {
@@ -363,8 +362,8 @@ a {
 
 .emailCapture h2,
 .sidebarBlock h2 {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
   font-weight: 600;
   margin: 0 0 0.5rem;
 }
@@ -395,14 +394,14 @@ a {
 }
 
 .emailCapture input:focus {
-  border-color: var(--accent-light);
+  border-color: var(--accent);
 }
 
 .emailCapture button {
   border: none;
   border-radius: var(--radius);
   padding: 0.7rem 0.85rem;
-  background: var(--text);
+  background: var(--accent);
   color: #fff;
   font-family: var(--font-sans);
   font-size: 0.78rem;
@@ -414,7 +413,7 @@ a {
 }
 
 .emailCapture button:hover {
-  background: #2a2a28;
+  background: #0e1a2e;
 }
 
 .sidebarBlock ul {
@@ -446,13 +445,13 @@ a {
 }
 
 .tagRow span {
-  background: #f0ece5;
-  border: 1px solid var(--border);
+  background: #eef0f5;
+  border: 1px solid #dce0ea;
   border-radius: 999px;
   padding: 0.15rem 0.6rem;
   font-size: 0.75rem;
   font-weight: 500;
-  color: var(--muted);
+  color: var(--accent);
   letter-spacing: 0.03em;
 }
 
@@ -464,12 +463,12 @@ a {
 }
 
 .postDetail h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 500;
+  font-weight: 300;
   margin: 0.5rem 0 1rem;
   line-height: 1.15;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .lead {
@@ -530,9 +529,9 @@ a {
 }
 
 .footerBrand {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
   letter-spacing: 0.02em;
   margin: 0 0 0.6rem;
 }
@@ -603,6 +602,12 @@ a {
 }
 
 /* ── Responsive ── */
+
+@media (max-width: 1040px) {
+  .postGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 @media (max-width: 960px) {
   .latestWrap,
