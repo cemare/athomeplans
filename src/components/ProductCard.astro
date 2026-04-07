@@ -1,0 +1,234 @@
+---
+export interface Product {
+  id: string;
+  title: string;
+  category: string;
+  style: string;
+  price: number;
+  description: string;
+  images: { src: string; alt: string }[];
+  etsy_url: string;
+}
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const sliderId = `slider-${product.id}`;
+---
+
+<article class="productCard">
+  <div class="productSlider" id={sliderId}>
+    <div class="productSliderTrack">
+      {product.images.map((img, i) => (
+        <div class="productSlide" data-index={i}>
+          <img src={img.src} alt={img.alt} loading="lazy" />
+        </div>
+      ))}
+    </div>
+    {product.images.length > 1 && (
+      <>
+        <button class="sliderArrow sliderArrowLeft" aria-label="Previous image">&#8592;</button>
+        <button class="sliderArrow sliderArrowRight" aria-label="Next image">&#8594;</button>
+        <div class="sliderDots">
+          {product.images.map((_, i) => (
+            <button
+              class={`sliderDot${i === 0 ? " active" : ""}`}
+              data-index={i}
+              aria-label={`Image ${i + 1}`}
+            />
+          ))}
+        </div>
+      </>
+    )}
+  </div>
+  <div class="productCardBody">
+    <p class="metaLine">{product.category} · {product.style}</p>
+    <h3>{product.title}</h3>
+    <p class="productDesc">{product.description}</p>
+    <div class="productFooter">
+      <span class="productPrice">${product.price}</span>
+      <a
+        href={product.etsy_url}
+        class="btnPrimary productBuyBtn"
+        target="_blank"
+        rel="noreferrer"
+      >Buy on Etsy</a>
+    </div>
+  </div>
+</article>
+
+<style>
+  .productCard {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .productCard:hover {
+    box-shadow: 0 4px 24px rgba(27, 42, 74, 0.08);
+    border-color: #c8ccd6;
+  }
+
+  .productSlider {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #f4f5f7;
+  }
+
+  .productSliderTrack {
+    display: flex;
+    height: 100%;
+    transition: transform 0.35s ease;
+  }
+
+  .productSlide {
+    flex: 0 0 100%;
+    height: 100%;
+  }
+
+  .productSlide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sliderArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: background 0.15s;
+    z-index: 2;
+    padding: 0;
+    line-height: 1;
+  }
+
+  .sliderArrow:hover {
+    background: #fff;
+  }
+
+  .sliderArrowLeft {
+    left: 0.5rem;
+  }
+
+  .sliderArrowRight {
+    right: 0.5rem;
+  }
+
+  .sliderDots {
+    position: absolute;
+    bottom: 0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.35rem;
+    z-index: 2;
+  }
+
+  .sliderDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.55);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.15s, transform 0.15s;
+  }
+
+  .sliderDot.active {
+    background: #fff;
+    transform: scale(1.25);
+  }
+
+  .productCardBody {
+    padding: 1.25rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .productCardBody h3 {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0.25rem 0 0.5rem;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .productDesc {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 0 0 1.25rem;
+    flex: 1;
+    line-height: 1.6;
+  }
+
+  .productFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: auto;
+  }
+
+  .productPrice {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  .productBuyBtn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
+  }
+</style>
+
+<script define:vars={{ sliderId, imageCount: product.images.length }}>
+  const slider = document.getElementById(sliderId);
+  if (slider && imageCount > 1) {
+    const track = slider.querySelector(".productSliderTrack");
+    const dots = slider.querySelectorAll(".sliderDot");
+    const leftBtn = slider.querySelector(".sliderArrowLeft");
+    const rightBtn = slider.querySelector(".sliderArrowRight");
+    let current = 0;
+
+    function goTo(index) {
+      current = (index + imageCount) % imageCount;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle("active", i === current));
+    }
+
+    leftBtn?.addEventListener("click", () => goTo(current - 1));
+    rightBtn?.addEventListener("click", () => goTo(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
+
+    // Touch swipe
+    let startX = 0;
+    track.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener("touchend", (e) => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+    }, { passive: true });
+  }
+</script>

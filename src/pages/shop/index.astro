@@ -1,0 +1,144 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import type { Product } from "../../components/ProductCard.astro";
+
+const products: Product[] = [
+  {
+    id: "living-room-refresh",
+    title: "Living Room Refresh Plan",
+    category: "Living Room",
+    style: "Warm Modern",
+    price: 47,
+    description:
+      "A high-impact layout and decor update using layered lighting, balanced seating, and texture-driven accents. Includes a furniture placement map, color and material guide, and a shoppable checklist that mixes affordable anchor pieces with 1–2 statement upgrades.",
+    images: [
+      { src: "/images/cover-living-room-refresh.jpg", alt: "Living room refresh plan cover" },
+      { src: "/images/inline-living-room-focal-point.jpg", alt: "Living room focal point styling" },
+      { src: "/images/inline-living-room-layout.jpg", alt: "Living room layout diagram" },
+    ],
+    etsy_url: "https://www.etsy.com/shop/athomeplans",
+  },
+  {
+    id: "bedroom-reset",
+    title: "Bedroom Reset Plan",
+    category: "Bedroom",
+    style: "Soft Minimal",
+    price: 39,
+    description:
+      "A calming bedroom package focused on storage relief, symmetry, and low-clutter styling. Covers furniture placement to improve flow, nightstand and lighting pairings, and a styling list for bedding, art, and finishing touches with clear budget ranges.",
+    images: [
+      { src: "/images/cover-bedroom-reset.jpg", alt: "Bedroom reset plan cover" },
+      { src: "/images/inline-decor-edited-space.jpg", alt: "Edited bedroom space" },
+      { src: "/images/inline-decor-premium-anchor.jpg", alt: "Premium decor anchor piece" },
+    ],
+    etsy_url: "https://www.etsy.com/shop/athomeplans?section_id=0",
+  },
+  {
+    id: "design-guide-bundle",
+    title: "Interior Design Starter Bundle",
+    category: "Digital Bundle",
+    style: "Multi-Room",
+    price: 67,
+    description:
+      "Everything you need to start designing with confidence. Includes guides on planning a living room layout, mixing budget and premium decor, and using a digital design plan — a complete toolkit for first-time decorators and seasoned refreshers alike.",
+    images: [
+      { src: "/images/cover-how-to-plan-a-living-room-layout.jpg", alt: "How to plan a living room layout guide" },
+      { src: "/images/cover-how-to-mix-budget-and-premium-decor.jpg", alt: "How to mix budget and premium decor guide" },
+      { src: "/images/cover-how-to-use-a-digital-interior-design-plan.jpg", alt: "How to use a digital interior design plan" },
+    ],
+    etsy_url: "https://www.etsy.com/shop/athomeplans",
+  },
+];
+---
+
+<BaseLayout
+  title="Shop"
+  description="Browse At Home Plans design packages — downloadable room plans, layout guides, and decor checklists for every budget."
+  canonicalPath="/shop"
+>
+  <section class="shopHero container">
+    <p class="eyebrow">At Home Plans</p>
+    <h1>The Shop</h1>
+    <p class="shopSubtitle">
+      Downloadable design packages to help you transform any room — at any budget.
+    </p>
+  </section>
+
+  <section class="container shopGrid sectionPad">
+    {products.map((product) => <ProductCard product={product} />)}
+  </section>
+
+  <section class="shopEtsyNote container">
+    <p>
+      All purchases are fulfilled through our
+      <a href="https://www.etsy.com/shop/athomeplans" target="_blank" rel="noreferrer">Etsy storefront</a>.
+      Digital files are delivered instantly after checkout.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .shopHero {
+    padding: 5rem 0 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .shopHero h1 {
+    font-family: var(--font-sans);
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    font-weight: 300;
+    margin: 0 0 1rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .shopSubtitle {
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 52ch;
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  .shopGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    align-items: start;
+  }
+
+  .shopEtsyNote {
+    padding-bottom: 4rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+  }
+
+  .shopEtsyNote p {
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin: 0;
+  }
+
+  .shopEtsyNote a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  @media (max-width: 1040px) {
+    .shopGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .shopHero {
+      padding: 3.5rem 0 2.5rem;
+    }
+
+    .shopGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
