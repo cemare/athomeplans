@@ -86,6 +86,103 @@ a {
   background: var(--border);
 }
 
+.mainNav a.navEtsy {
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.mainNav a.navEtsy:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ── Shop CTA Banner ── */
+
+.shopCta {
+  background: var(--accent);
+  color: #fff;
+  padding: 5rem 0;
+}
+
+.shopCtaInner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 3rem;
+}
+
+.shopCta .eyebrow {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.shopCta h2 {
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.shopCta p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  max-width: 52ch;
+  margin: 0 0 2rem;
+}
+
+.shopCta .btnPrimary {
+  background: #fff;
+  color: var(--accent);
+  border-color: #fff;
+}
+
+.shopCta .btnPrimary:hover {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 0.88);
+  color: var(--accent);
+}
+
+.shopCta .btnSecondary {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.shopCta .btnSecondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+  color: #fff;
+}
+
+.shopCtaBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  text-align: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.shopCtaIcon {
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+.shopCtaBadge p {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  line-height: 1.4;
+}
+
 /* ── Hero ── */
 
 .hero {
