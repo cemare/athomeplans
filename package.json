@@ -1,6 +1,6 @@
 {
-  "name": "athena-interior",
-  "version": "0.1.0",
+  "name": "athomebuilds",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "build": "astro build",
