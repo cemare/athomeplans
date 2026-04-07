@@ -1,0 +1,248 @@
+---
+import type { PinterestPin } from "../lib/blog";
+
+interface Props {
+  pins: PinterestPin[];
+  postUrl: string;
+  postTitle: string;
+}
+
+const { pins, postUrl, postTitle } = Astro.props;
+---
+
+<section class="pinSliderSection">
+  <div class="pinSliderHeader">
+    <h2>Save to Pinterest</h2>
+    <p>Pin this guide to refer back to it anytime.</p>
+  </div>
+
+  <div class="pinSliderWrapper">
+    <button class="pinSliderArrow pinSliderArrowLeft" aria-label="Scroll left">&#8592;</button>
+    <div class="pinSliderTrack" id="pinSliderTrack">
+      {pins.map((pin) => (
+        <div class="pinCard">
+          <div class="pinImageWrap">
+            <img
+              src={pin.image}
+              alt={pin.headline}
+              loading="lazy"
+              class="pinImage"
+            />
+          </div>
+          <div class="pinCardBody">
+            <p class="pinHeadline">{pin.headline}</p>
+            <p class="pinSubCopy">{pin.subCopy}</p>
+            <a
+              class="pinSaveBtn"
+              href={`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(postUrl)}&media=${encodeURIComponent(pin.image)}&description=${encodeURIComponent(pin.headline + " — " + postTitle + " | athomeplans.com")}`}
+              target="_blank"
+              rel="noreferrer"
+              data-pin-do="buttonPin"
+              data-pin-url={postUrl}
+              data-pin-media={pin.image}
+              data-pin-description={`${pin.headline} — ${postTitle} | athomeplans.com`}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+              Save
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+    <button class="pinSliderArrow pinSliderArrowRight" aria-label="Scroll right">&#8594;</button>
+  </div>
+</section>
+
+<style>
+  .pinSliderSection {
+    margin: 3rem 0 0;
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--color-border, #e5e0d8);
+  }
+
+  .pinSliderHeader {
+    margin-bottom: 1.5rem;
+  }
+
+  .pinSliderHeader h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text, #1a1a1a);
+    margin: 0 0 0.25rem;
+  }
+
+  .pinSliderHeader p {
+    font-size: 0.9rem;
+    color: var(--color-muted, #6b6560);
+    margin: 0;
+  }
+
+  .pinSliderWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .pinSliderTrack {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex: 1;
+    padding: 0.25rem 0;
+  }
+
+  .pinSliderTrack::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pinCard {
+    flex: 0 0 250px;
+    width: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--color-surface, #faf9f7);
+    border: 1px solid var(--color-border, #e5e0d8);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pinImageWrap {
+    width: 250px;
+    height: 375px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .pinImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .pinCardBody {
+    padding: 0.875rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    flex: 1;
+  }
+
+  .pinHeadline {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text, #1a1a1a);
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .pinSubCopy {
+    font-size: 0.78rem;
+    color: var(--color-muted, #6b6560);
+    margin: 0;
+    line-height: 1.35;
+  }
+
+  .pinSaveBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+    padding: 0.45rem 0.85rem;
+    background: #e60023;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    width: fit-content;
+    transition: background 0.15s;
+  }
+
+  .pinSaveBtn:hover {
+    background: #c0001d;
+  }
+
+  .pinSliderArrow {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border, #e5e0d8);
+    background: var(--color-bg, #fff);
+    color: var(--color-text, #1a1a1a);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: background 0.15s;
+    z-index: 1;
+  }
+
+  .pinSliderArrow:hover {
+    background: var(--color-surface, #faf9f7);
+  }
+
+  @media (max-width: 768px) {
+    .pinSliderArrow {
+      display: none;
+    }
+
+    .pinCard {
+      flex: 0 0 220px;
+      width: 220px;
+    }
+
+    .pinImageWrap {
+      width: 220px;
+      height: 330px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .pinCard {
+      flex: 0 0 85vw;
+      width: 85vw;
+    }
+
+    .pinImageWrap {
+      width: 85vw;
+      height: calc(85vw * 1.5);
+    }
+  }
+</style>
+
+<script>
+  const track = document.getElementById("pinSliderTrack");
+  if (track) {
+    const leftBtn = track.closest(".pinSliderWrapper")?.querySelector(".pinSliderArrowLeft");
+    const rightBtn = track.closest(".pinSliderWrapper")?.querySelector(".pinSliderArrowRight");
+    const scrollAmount = 270;
+
+    leftBtn?.addEventListener("click", () => {
+      track.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    });
+
+    rightBtn?.addEventListener("click", () => {
+      track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
+
+    // Touch swipe support
+    let startX = 0;
+    track.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    track.addEventListener("touchend", (e) => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) {
+        track.scrollBy({ left: diff, behavior: "smooth" });
+      }
+    }, { passive: true });
+  }
+</script>

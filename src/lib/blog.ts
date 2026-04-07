@@ -5,6 +5,12 @@ export type InlineImage = {
   afterParagraph: number;
 };
 
+export type PinterestPin = {
+  headline: string;
+  subCopy: string;
+  image: string;
+};
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -16,6 +22,7 @@ export type BlogPost = {
   etsyLinks: Array<{ label: string; url: string }>;
   body: string;
   inlineImages?: InlineImage[];
+  pinterestPins?: PinterestPin[];
   draft?: boolean;
 };
 

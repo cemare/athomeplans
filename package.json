@@ -13,7 +13,8 @@
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
-    "astro": "^6.0.0"
+    "astro": "^6.0.0",
+    "marked": "^18.0.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.8",

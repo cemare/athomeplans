@@ -1,5 +1,7 @@
 ---
+import { marked } from "marked";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PinterestSlider from "../../components/PinterestSlider.astro";
 import { getAllPosts } from "../../lib/blog";
 
 export function getStaticPaths() {
@@ -16,6 +18,11 @@ if (!post) {
 }
 
 const siteUrl = import.meta.env.PUBLIC_SITE_URL || "https://athomeplans.com";
+const postUrl = `${siteUrl}/blog/${post.slug}`;
+
+// Detect if body is markdown (has headings, bullets, or bold markers)
+const isMarkdown = /^#{1,6} |^\*\*|^- |\*\*/m.test(post.body);
+const bodyHtml = isMarkdown ? marked.parse(post.body) as string : null;
 
 const articleLd = {
   "@context": "https://schema.org",
@@ -29,7 +36,7 @@ const articleLd = {
   },
   image: post.coverImage ? [post.coverImage] : [`${siteUrl}/images/og-default.svg`],
   description: post.excerpt,
-  mainEntityOfPage: `${siteUrl}/blog/${post.slug}`,
+  mainEntityOfPage: postUrl,
   publisher: {
     "@type": "Organization",
     name: "At Home Plans",
@@ -71,17 +78,21 @@ const formatLongDate = (dateValue: string): string =>
       </div>
 
       <div class="articleBody">
-        {post.body.split("\n\n").map((paragraph, index) => (
-          <>
-            <p>{paragraph}</p>
-            {post.inlineImages?.filter((img) => img.afterParagraph === index + 1).map((img) => (
-              <figure class="inlineImage">
-                <img src={img.src} alt={img.alt} loading="lazy" />
-                {img.caption && <figcaption>{img.caption}</figcaption>}
-              </figure>
-            ))}
-          </>
-        ))}
+        {bodyHtml ? (
+          <div class="markdownBody" set:html={bodyHtml} />
+        ) : (
+          post.body.split("\n\n").map((paragraph, index) => (
+            <>
+              <p>{paragraph}</p>
+              {post.inlineImages?.filter((img) => img.afterParagraph === index + 1).map((img) => (
+                <figure class="inlineImage">
+                  <img src={img.src} alt={img.alt} loading="lazy" />
+                  {img.caption && <figcaption>{img.caption}</figcaption>}
+                </figure>
+              ))}
+            </>
+          ))
+        )}
       </div>
 
       <section class="sidebarBlock">
@@ -94,7 +105,74 @@ const formatLongDate = (dateValue: string): string =>
           ))}
         </ul>
       </section>
+
+      {post.pinterestPins && post.pinterestPins.length > 0 && (
+        <PinterestSlider
+          pins={post.pinterestPins}
+          postUrl={postUrl}
+          postTitle={post.title}
+        />
+      )}
     </article>
     <script is:inline type="application/ld+json" set:html={JSON.stringify(articleLd)}></script>
   </div>
 </BaseLayout>
+
+<style>
+  .markdownBody :global(h2) {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 2rem 0 0.75rem;
+    color: var(--color-text, #1a1a1a);
+  }
+
+  .markdownBody :global(h3) {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+    color: var(--color-text, #1a1a1a);
+  }
+
+  .markdownBody :global(p) {
+    margin: 0 0 1rem;
+    line-height: 1.7;
+  }
+
+  .markdownBody :global(ul),
+  .markdownBody :global(ol) {
+    margin: 0.5rem 0 1rem 1.5rem;
+    line-height: 1.7;
+  }
+
+  .markdownBody :global(li) {
+    margin-bottom: 0.3rem;
+  }
+
+  .markdownBody :global(strong) {
+    font-weight: 600;
+  }
+
+  .markdownBody :global(hr) {
+    border: none;
+    border-top: 1px solid var(--color-border, #e5e0d8);
+    margin: 2rem 0;
+  }
+
+  .markdownBody :global(a) {
+    color: var(--color-accent, #8b6f5e);
+    text-decoration: underline;
+  }
+
+  .markdownBody :global(blockquote) {
+    border-left: 3px solid var(--color-border, #e5e0d8);
+    margin: 1.5rem 0;
+    padding: 0.5rem 1.25rem;
+    color: var(--color-muted, #6b6560);
+    font-style: italic;
+  }
+
+  .markdownBody :global(em) {
+    font-style: italic;
+    color: var(--color-muted, #6b6560);
+  }
+</style>
