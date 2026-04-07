@@ -5,7 +5,7 @@ Unified Next.js site for At Home Plans with:
 - Main catalog-style plans experience at `/plans` and `/plans/[slug]`
 - Blog index at `/blog` and article pages at `/blog/[slug]`
 - Shared branding/navigation so both experiences feel like one product
-- Cloudflare Pages-ready deployment workflow
+- Cloudflare direct Git integration deployment (Workers/Pages)
 
 ## Content and plan editing workflow
 
@@ -49,19 +49,29 @@ npm run dev
 npm run build
 ```
 
-## Deploy to Cloudflare Pages
+## Deploy to Cloudflare (GitHub direct integration)
 
-Use Cloudflare Pages for hosting and GitHub Actions for automatic deploy triggers on `main`.
+Use Cloudflare's native GitHub integration for production deploys from `main`.
+No deploy hook secret is required.
 
-Recommended architecture:
+Recommended setup:
 
-1. Create one Cloudflare Pages project for this unified site (custom domain `athomeplans.com`).
-2. Configure framework preset as `Next.js`.
-3. Set build command `npm run build` and output directory `.next`.
-4. Configure environment variables listed above.
-5. Create a deploy hook for the production branch.
-6. Add GitHub secret `CLOUDFLARE_PAGES_DEPLOY_HOOK_URL` with that hook URL.
-7. Keep `.github/workflows/cloudflare-pages-deploy.yml` in this repository.
-8. Push to `main` (or run the workflow manually).
+1. Connect this repository to a single Cloudflare project for `athomeplans.com`.
+2. Set production branch to `main`.
+3. Keep repository root as the project root directory.
+4. Use `wrangler.toml` from this repo as the source of truth for build/runtime config.
+5. If prompted for build details in dashboard UI, use:
+   - Build command: `npx opennextjs-cloudflare build`
+   - Deploy command: `npx wrangler deploy`
+   - Output directory: `.open-next/assets`
+6. Configure environment variables listed above.
+7. Keep `.github/workflows/cloudflare-pages-deploy.yml` only for CI validation; it does not deploy.
+8. Push to `main` to trigger Cloudflare production deployment directly from GitHub.
 
-This approach retires the previous split-prototype setup and keeps plans + blog on a single production surface while still supporting independent content updates.
+Troubleshooting:
+
+- If production responds with placeholder content (for example `Hello world`), verify Cloudflare project settings:
+  - repository connection points to `cemare/athomeplans`
+  - production branch is `main`
+  - root directory is the repository root
+  - build/runtime settings match `wrangler.toml` in this repository
