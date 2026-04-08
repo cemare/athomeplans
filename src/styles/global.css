@@ -3,12 +3,12 @@
 }
 
 :root {
-  --bg: #b0aca2;
+  --bg: #f0ebe2;
   --surface: #fff;
   --text: #010101;
   --muted: #6e6a65;
   --subtle: #f5ece5;
-  --border: #9e9a91;
+  --border: #ddd8ce;
   --accent: #45523e;
   --brand: #ad5d50;
   --font-sans: "DM Sans", "Helvetica Neue", Arial, sans-serif;
