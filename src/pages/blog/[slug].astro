@@ -271,6 +271,19 @@ const formatLongDate = (dateValue: string): string =>
     color: var(--color-muted, #6b6560);
   }
 
+  .markdownBody :global(img) {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    margin: 1.5rem auto;
+    border-radius: var(--radius-lg, 8px);
+  }
+
+  .markdownBody :global(p):has(> img:only-child) {
+    margin: 0;
+  }
+
   .ebookInlineCta {
     margin-top: 2.5rem;
     padding: 1.75rem 2rem;
