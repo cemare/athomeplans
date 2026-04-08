@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "lint": "astro check",
     "typecheck": "astro check",
-    "deploy": "wrangler deploy",
+    "deploy": "wrangler deploy --config dist/server/wrangler.json",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
