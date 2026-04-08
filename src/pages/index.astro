@@ -2,10 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import EmailCapture from "../components/EmailCapture.astro";
 import { getAllPosts } from "../lib/blog";
-import { getAllPlans } from "../lib/plans";
 
 const latestPosts = getAllPosts().slice(0, 3);
-const featuredPlans = getAllPlans().filter((plan) => plan.featured).slice(0, 3);
 
 const formatShortDate = (dateValue: string): string =>
   new Date(dateValue).toLocaleDateString("en-US", {
@@ -25,9 +23,9 @@ const formatShortDate = (dateValue: string): string =>
         a space you love.
       </p>
       <div class="heroCtas">
-        <a href="/plans" class="btnPrimary">Browse Plans</a>
-        <a href="/blog" class="btnSecondary">Read the Journal</a>
+        <a href="/blog" class="btnPrimary">Read the Journal</a>
         <a href="/shop" class="btnSecondary">Shop</a>
+        <a href="/ebooks" class="btnSecondary">E-Books</a>
       </div>
     </div>
   </section>
@@ -36,18 +34,28 @@ const formatShortDate = (dateValue: string): string =>
 
   <section class="container sectionPad">
     <div class="sectionHead">
-      <h2>Featured Plans</h2>
-      <p>Proven room layouts with curated shopping guidance — ready to make your own.</p>
+      <h2>Everything We Offer</h2>
+      <p>Explore our content, resources, and products — all in one place.</p>
     </div>
     <div class="postGrid">
-      {featuredPlans.map((plan) => (
-        <article class="postCard">
-          <p class="metaLine">{plan.category} · {plan.style}</p>
-          <h3><a href={`/plans/${plan.slug}`}>{plan.title}</a></h3>
-          <p>{plan.summary}</p>
-          <a href={`/plans/${plan.slug}`} class="readMoreLink">View plan</a>
-        </article>
-      ))}
+      <article class="postCard">
+        <p class="metaLine">Content</p>
+        <h3><a href="/blog">The Journal</a></h3>
+        <p>Practical styling tips, room ideas, and design inspiration. New articles published regularly to help you make the most of any space.</p>
+        <a href="/blog" class="readMoreLink">Browse articles</a>
+      </article>
+      <article class="postCard">
+        <p class="metaLine">Products</p>
+        <h3><a href="/shop">Shop</a></h3>
+        <p>Floor plans, mood boards, and design templates — available as instant downloads from our Etsy storefront, starting at $15.</p>
+        <a href="/shop" class="readMoreLink">Visit the shop</a>
+      </article>
+      <article class="postCard">
+        <p class="metaLine">Guides</p>
+        <h3><a href="/ebooks">E-Books</a></h3>
+        <p>In-depth guides on styling small spaces, buying furniture, and decorating on a budget. Download instantly and start designing today.</p>
+        <a href="/ebooks" class="readMoreLink">Browse e-books</a>
+      </article>
     </div>
   </section>
 
