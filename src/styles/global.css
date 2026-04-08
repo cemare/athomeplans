@@ -9,8 +9,8 @@
   --muted: #6e6a65;
   --subtle: #b0aca2;
   --border: #dbd5cc;
-  --accent: #ad5d50;
-  --brand: #45523e;
+  --accent: #45523e;
+  --brand: #ad5d50;
   --font-sans: "DM Sans", "Helvetica Neue", Arial, sans-serif;
   --radius: 4px;
   --radius-lg: 8px;
@@ -335,8 +335,8 @@ a {
 }
 
 .btnPrimary:hover {
-  background: #8f4d43;
-  border-color: #8f4d43;
+  background: #374233;
+  border-color: #374233;
   color: #fff;
 }
 
@@ -598,7 +598,7 @@ a {
 }
 
 .emailCapture button:hover {
-  background: #8f4d43;
+  background: #374233;
 }
 
 .sidebarBlock ul {
