@@ -3,13 +3,14 @@
 }
 
 :root {
-  --bg: #ffffff;
-  --surface: #ffffff;
-  --text: #1a1a18;
-  --muted: #6b6b68;
-  --subtle: #ababab;
-  --border: #e8e8e4;
-  --accent: #1b2a4a;
+  --bg: #f5ece5;
+  --surface: #fff;
+  --text: #010101;
+  --muted: #6e6a65;
+  --subtle: #b0aca2;
+  --border: #dbd5cc;
+  --accent: #ad5d50;
+  --brand: #45523e;
   --font-sans: "DM Sans", "Helvetica Neue", Arial, sans-serif;
   --radius: 4px;
   --radius-lg: 8px;
@@ -99,7 +100,7 @@ a {
 /* ── Shop CTA Banner ── */
 
 .shopCta {
-  background: var(--accent);
+  background: var(--brand);
   color: #fff;
   padding: 5rem 0;
 }
@@ -133,14 +134,14 @@ a {
 
 .shopCta .btnPrimary {
   background: #fff;
-  color: var(--accent);
+  color: var(--brand);
   border-color: #fff;
 }
 
 .shopCta .btnPrimary:hover {
   background: rgba(255, 255, 255, 0.88);
   border-color: rgba(255, 255, 255, 0.88);
-  color: var(--accent);
+  color: var(--brand);
 }
 
 .shopCta .btnSecondary {
@@ -186,7 +187,7 @@ a {
 /* ── E-Books Banner ── */
 
 .ebooksBanner {
-  background: #f8f5f1;
+  background: #ede6df;
   padding: 5rem 0;
   border-bottom: 1px solid var(--border);
 }
@@ -334,8 +335,8 @@ a {
 }
 
 .btnPrimary:hover {
-  background: #0e1a2e;
-  border-color: #0e1a2e;
+  background: #8f4d43;
+  border-color: #8f4d43;
   color: #fff;
 }
 
@@ -401,8 +402,8 @@ a {
 }
 
 .postCard:hover {
-  box-shadow: 0 4px 24px rgba(27, 42, 74, 0.08);
-  border-color: #c8ccd6;
+  box-shadow: 0 4px 24px rgba(69, 82, 62, 0.1);
+  border-color: #c4bdb5;
 }
 
 .cardImageLink {
@@ -415,7 +416,7 @@ a {
   overflow: hidden;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   aspect-ratio: 16 / 10;
-  background: #f4f5f7;
+  background: #ede6df;
 }
 
 .coverMedia img {
@@ -597,7 +598,7 @@ a {
 }
 
 .emailCapture button:hover {
-  background: #0e1a2e;
+  background: #8f4d43;
 }
 
 .sidebarBlock ul {
@@ -629,13 +630,13 @@ a {
 }
 
 .tagRow span {
-  background: #eef0f5;
-  border: 1px solid #dce0ea;
+  background: #ede6df;
+  border: 1px solid #dbd5cc;
   border-radius: 999px;
   padding: 0.15rem 0.6rem;
   font-size: 0.75rem;
   font-weight: 500;
-  color: var(--accent);
+  color: var(--brand);
   letter-spacing: 0.03em;
 }
 
