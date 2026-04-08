@@ -3,12 +3,12 @@
 }
 
 :root {
-  --bg: #f5ece5;
+  --bg: #b0aca2;
   --surface: #fff;
   --text: #010101;
   --muted: #6e6a65;
-  --subtle: #b0aca2;
-  --border: #dbd5cc;
+  --subtle: #f5ece5;
+  --border: #9e9a91;
   --accent: #45523e;
   --brand: #ad5d50;
   --font-sans: "DM Sans", "Helvetica Neue", Arial, sans-serif;
@@ -631,7 +631,7 @@ a {
 
 .tagRow span {
   background: #ede6df;
-  border: 1px solid #dbd5cc;
+  border: 1px solid var(--border);
   border-radius: 999px;
   padding: 0.15rem 0.6rem;
   font-size: 0.75rem;
