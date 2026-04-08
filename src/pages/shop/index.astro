@@ -5,67 +5,205 @@ import type { Product } from "../../components/ProductCard.astro";
 
 const products: Product[] = [
   {
-    id: "living-room-mood-board",
-    title: "Living Room Mood Board with Shopping Links",
+    id: "vintage-bathroom-neutral-beige-gold",
+    title: "Vintage Bathroom Design Mood Board | Neutral Beige & Gold, Shopping Links, Dimensions and Tips",
+    category: "Bathroom",
+    style: "Vintage · Transitional",
+    price: 22.22,
+    description:
+      "Create a designer bathroom look without the overwhelm. This predesigned bathroom mood board gives you a cohesive, ready-to-shop plan with a clickable shopping list, curated finishes, and styling guidance—perfect for a bathroom remodel, master bathroom renovation, or quick bathroom refresh.",
+    images: [
+      { src: "https://i.etsystatic.com/59977188/r/il/886730/7676202970/il_fullxfull.7676202970_mfcc.jpg", alt: "Vintage Bathroom Design Mood Board – Neutral Beige & Gold" },
+      { src: "https://i.etsystatic.com/59977188/r/il/fefa13/7673225694/il_fullxfull.7673225694_izex.jpg", alt: "Vintage Bathroom Design Mood Board – detail view" },
+      { src: "https://i.etsystatic.com/59977188/r/il/b29d3f/7721179947/il_fullxfull.7721179947_y3ld.jpg", alt: "Vintage Bathroom Design Mood Board – shopping list" },
+    ],
+    etsy_url: "https://www.etsy.com/shop/athomeplans",
+  },
+  {
+    id: "california-coastal-living-room",
+    title: "California Coastal Living Room Mood Board | Clickable Shopping List (PDF)",
     category: "Living Room",
-    style: "Scandinavian · Japandi",
-    price: 27,
+    style: "California Coastal",
+    price: 9.99,
     description:
-      "A full mood board PDF with furniture, textiles, and accessories curated around a Scandinavian-Japandi aesthetic. Includes clickable shopping links for every item, a color and material guide, and layout suggestions — delivered as an instant download.",
+      "Breathe new life into your space with this calm, airy, and effortlessly beautiful California Coastal Living Room Mood Board, curated by a licensed architect. Captures relaxed luxury, light wood textures, and coastal neutrals that feel both timeless and serene.",
     images: [
-      { src: "/images/etsy-living-room-mood-board.png", alt: "Living Room Mood Board with Shopping Links" },
+      { src: "https://i.etsystatic.com/59977188/r/il/917b8c/6973129335/il_fullxfull.6973129335_1wot.jpg", alt: "California Coastal Living Room Mood Board" },
+      { src: "https://i.etsystatic.com/59977188/r/il/1de12b/6973129329/il_fullxfull.6973129329_2p3s.jpg", alt: "California Coastal Living Room – detail" },
     ],
     etsy_url: "https://www.etsy.com/shop/athomeplans",
   },
   {
-    id: "room-layout-plan",
-    title: "Room Layout Plan",
-    category: "Layout & Planning",
-    style: "Universal",
-    price: 19,
-    description:
-      "A furniture placement guide and room layout diagram to help you arrange any space with confidence. Includes scaled floor plan templates, traffic flow principles, and a quick-reference measurement guide for sofas, rugs, and lighting.",
-    images: [
-      { src: "/images/etsy-room-layout-plan.png", alt: "Room Layout Plan" },
-    ],
-    etsy_url: "https://www.etsy.com/shop/athomeplans",
-  },
-  {
-    id: "home-decor-style-guide",
-    title: "Home Decor Style Guide",
-    category: "Style Guide",
-    style: "Multi-Room",
-    price: 22,
-    description:
-      "A comprehensive digital style guide covering color palettes, material pairings, and decor principles for every room in your home. Includes a clickable shopping list and practical tips for mixing budget and premium pieces with a cohesive result.",
-    images: [
-      { src: "/images/etsy-home-decor-style-guide.png", alt: "Home Decor Style Guide" },
-    ],
-    etsy_url: "https://www.etsy.com/shop/athomeplans",
-  },
-  {
-    id: "japandi-living-room-package",
-    title: "Pre-Designed Living Room Package (Japandi)",
+    id: "organic-modern-living-room",
+    title: "Organic Modern Living Room Mood Board | Clickable Shopping List (PDF)",
     category: "Living Room",
-    style: "Japandi",
-    price: 47,
+    style: "Organic Modern",
+    price: 22.22,
     description:
-      "A complete, ready-to-implement Japandi living room design. Includes a curated mood board, furniture placement map, clickable shopping list with warm neutrals and natural materials, and a palette guide — everything to achieve that calm, intentional look.",
+      "Elevate your living space with this professionally curated Organic Modern Living Room Mood Board—a perfect balance of refined style, warm textures, and nature-inspired design. Blends soft neutrals, sculptural wood furniture, boucle fabrics, and clean lines.",
     images: [
-      { src: "/images/etsy-japandi-living-room.png", alt: "Pre-Designed Living Room Package (Japandi)" },
+      { src: "https://i.etsystatic.com/59977188/r/il/cd63f1/7682616024/il_fullxfull.7682616024_iybr.jpg", alt: "Organic Modern Living Room Mood Board" },
+      { src: "https://i.etsystatic.com/59977188/r/il/457326/7730562263/il_fullxfull.7730562263_pn2c.jpg", alt: "Organic Modern Living Room – detail" },
+      { src: "https://i.etsystatic.com/59977188/r/il/ce8b0c/7730562539/il_fullxfull.7730562539_dhvw.jpg", alt: "Organic Modern Living Room – shopping list" },
     ],
     etsy_url: "https://www.etsy.com/shop/athomeplans",
   },
   {
-    id: "bedroom-mood-board",
-    title: "Bedroom Interior Design Mood Board",
+    id: "boho-bathroom-mood-board",
+    title: "Boho Bathroom Mood Board | Modern Coastal Design (Digital Download)",
+    category: "Bathroom",
+    style: "Boho · Coastal",
+    price: 22.22,
+    description:
+      "Bring relaxed luxury and earthy elegance into your home with this Bohemian Chic Bathroom Mood Board — a professionally curated digital design board that combines natural textures, warm brass finishes, and organic tones for a breezy, modern-boho aesthetic.",
+    images: [
+      { src: "https://i.etsystatic.com/59977188/r/il/f812f7/7754092121/il_fullxfull.7754092121_rdz4.jpg", alt: "Boho Bathroom Mood Board – Modern Coastal" },
+      { src: "https://i.etsystatic.com/59977188/r/il/e47ebf/7754092509/il_fullxfull.7754092509_z3xk.jpg", alt: "Boho Bathroom Mood Board – detail" },
+      { src: "https://i.etsystatic.com/59977188/r/il/abf13b/7706151072/il_fullxfull.7706151072_ci4p.jpg", alt: "Boho Bathroom Mood Board – finishes" },
+    ],
+    etsy_url: "https://www.etsy.com/shop/athomeplans",
+  },
+  {
+    id: "vintage-cottage-bedroom",
+    title: "Vintage Cottage Bedroom Mood Board | Cozy Decor (PDF)",
     category: "Bedroom",
-    style: "Minimalist · Biophilic",
-    price: 27,
+    style: "Vintage Cottage",
+    price: 22.22,
     description:
-      "A calming Japandi-inspired bedroom mood board with clickable shopping links for every piece. Covers platform bed styling, integrated storage, muted whites and greys, and natural biophilic accents — delivered as an instant PDF download.",
+      "Wrap your home in charm, comfort, and timeless character. This Vintage Cottage Bedroom Mood Board, thoughtfully curated by a licensed architect, captures the warmth of old-world craftsmanship, classic textiles, and romantic cottage style.",
     images: [
-      { src: "/images/etsy-bedroom-mood-board.png", alt: "Bedroom Interior Design Mood Board" },
+      { src: "https://i.etsystatic.com/59977188/r/il/f12a58/7727604757/il_fullxfull.7727604757_4p2a.jpg", alt: "Vintage Cottage Bedroom Mood Board" },
+      { src: "https://i.etsystatic.com/59977188/r/il/7f0ddf/7679659684/il_fullxfull.7679659684_lm8d.jpg", alt: "Vintage Cottage Bedroom – detail" },
+      { src: "https://i.etsystatic.com/59977188/r/il/4d86cf/7727604767/il_fullxfull.7727604767_m20n.jpg", alt: "Vintage Cottage Bedroom – shopping list" },
+    ],
+    etsy_url: "https://www.etsy.com/shop/athomeplans",
+  },
+  {
+    id: "coastal-living-room-nautical",
+    title: "Coastal Living Room Mood Board | Nautical Decor E-Design (PDF)",
+    category: "Living Room",
+    style: "New England Coastal",
+    price: 9.99,
+    description:
+      "Anchor your space with timeless charm and coastal elegance. This New England Coastal Living Room Mood Board blends nautical hues, rugged textures, and heirloom-inspired pieces—giving your space the feel of a refined coastal retreat.",
+    images: [
+      { src: "https://i.etsystatic.com/59977188/r/il/0e2c74/6930210384/il_fullxfull.6930210384_73v6.jpg", alt: "Coastal Living Room Mood Board – Nautical Decor" },
+      { src: "https://i.etsystatic.com/59977188/r/il/f3b578/6978178621/il_fullxfull.6978178621_o1j0.jpg", alt: "Coastal Living Room – detail" },
+    ],
+    etsy_url: "https://www.etsy.com/shop/athomeplans",
+  },
+  {
+    id: "bohemian-living-room-ikea",
+    title: "Bohemian Living Room IKEA Mood Board | Architect Curated (PDF)",
+    category: "Living Room",
+    style: "Bohemian · IKEA",
+    price: 22.22,
+    description:
+      "Step into your dream space—without the stress, guesswork, or expensive price tag. This Bohemian Rhapsody Living Room Mood Board is a warm, inviting interior design plan made entirely with IKEA furniture and decor, perfect for first-time homeowners or Airbnb hosts.",
+    images: [
+      { src: "https://i.etsystatic.com/59977188/r/il/add82b/7760937707/il_fullxfull.7760937707_ntgo.jpg", alt: "Bohemian Living Room IKEA Mood Board" },
+      { src: "https://i.etsystatic.com/59977188/r/il/440942/7712995258/il_fullxfull.7712995258_eplr.jpg", alt: "Bohemian Living Room IKEA – detail" },
+      { src: "https://i.etsystatic.com/59977188/r/il/01cac4/7712995518/il_fullxfull.7712995518_s2yx.jpg", alt: "Bohemian Living Room IKEA – shopping list" },
+    ],
+    etsy_url: "https://www.etsy.com/shop/athomeplans",
+  },
+  {
+    id: "modern-farmhouse-living-room-lrmb02",
+    title: "Modern Farmhouse Living Room Mood Board | Rustic Neutral Decor (PDF)",
+    category: "Living Room",
+    style: "Modern Farmhouse",
+    price: 9.99,
+    description:
+      "Looking to design a stylish, cozy living room on a budget? This Modern Farmhouse Living Room Mood Board features a professionally curated interior design plan where every item is under $500—perfect for homeowners, renters, or short-term rental hosts.",
+    images: [
+      { src: "https://i.etsystatic.com/59977188/r/il/db1aa2/6923711428/il_fullxfull.6923711428_h7az.jpg", alt: "Modern Farmhouse Living Room Mood Board" },
+      { src: "https://i.etsystatic.com/59977188/r/il/ae4af3/6923710752/il_fullxfull.6923710752_q935.jpg", alt: "Modern Farmhouse Living Room – detail" },
+    ],
+    etsy_url: "https://www.etsy.com/shop/athomeplans",
+  },
+  {
+    id: "midcentury-modern-living-room-under-500",
+    title: "Midcentury Modern Living Room Mood Board Under 500 Dollars | Retro Design Plan",
+    category: "Living Room",
+    style: "Midcentury Modern",
+    price: 9.99,
+    description:
+      "Good design shouldn't come with a luxury price tag—and now it doesn't have to. This Midcentury Modern Living Room Mood Board was thoughtfully curated by a licensed architect to help you design a warm, stylish, and cohesive space with every item under $500.",
+    images: [
+      { src: "https://i.etsystatic.com/59977188/r/il/9c8778/6972932713/il_fullxfull.6972932713_j249.jpg", alt: "Midcentury Modern Living Room Mood Board Under $500" },
+      { src: "https://i.etsystatic.com/59977188/r/il/a3e6b5/6972932711/il_fullxfull.6972932711_np0t.jpg", alt: "Midcentury Modern Living Room Under 500 – detail" },
+    ],
+    etsy_url: "https://www.etsy.com/shop/athomeplans",
+  },
+  {
+    id: "midcentury-modern-living-room",
+    title: "Midcentury Modern Living Room Mood Board | Architect Curated (PDF)",
+    category: "Living Room",
+    style: "Midcentury Modern",
+    price: 9.99,
+    description:
+      "Create a space that tells your story—with warmth, intention, and iconic design. This Midcentury Modern Living Room Mood Board brings together clean lines, earthy tones, and sculptural forms to help you achieve a timeless and sophisticated home.",
+    images: [
+      { src: "https://i.etsystatic.com/59977188/r/il/931b2b/6972052271/il_fullxfull.6972052271_ncy1.jpg", alt: "Midcentury Modern Living Room Mood Board – Architect Curated" },
+      { src: "https://i.etsystatic.com/59977188/r/il/540661/6972052263/il_fullxfull.6972052263_qzzw.jpg", alt: "Midcentury Modern Living Room – detail" },
+    ],
+    etsy_url: "https://www.etsy.com/shop/athomeplans",
+  },
+  {
+    id: "modern-bathroom-black-tile",
+    title: "Modern Bathroom Mood Board | Black Tile, Wood Vanity (Digital Download)",
+    category: "Bathroom",
+    style: "Modern · Dramatic",
+    price: 9.99,
+    description:
+      "Elevate your bathroom renovation with this Dramatic Modern Bathroom Mood Board—a pre-designed interior concept featuring bold black vertical tile, matte wood vanity cabinetry, polished chrome fixtures, and a stunning freestanding tub for a modern spa-like retreat.",
+    images: [
+      { src: "https://i.etsystatic.com/59977188/r/il/c9e2ac/6965397767/il_fullxfull.6965397767_5sxu.jpg", alt: "Modern Bathroom Mood Board – Black Tile, Wood Vanity" },
+      { src: "https://i.etsystatic.com/59977188/r/il/9a4363/6965397769/il_fullxfull.6965397769_74mw.jpg", alt: "Modern Bathroom Mood Board – detail" },
+    ],
+    etsy_url: "https://www.etsy.com/shop/athomeplans",
+  },
+  {
+    id: "modern-courtyard-house-plan",
+    title: "Modern Courtyard House Plan – 3 Bedroom Home Design (PDF & AutoCAD)",
+    category: "Floor Plans",
+    style: "Modern Courtyard",
+    price: 3000,
+    description:
+      "Discover a contemporary home designed for comfort, connection, and clean-lined sophistication. This 2,500 sq ft architectural plan features a spacious 3-bedroom, 2-bathroom layout organized around a private interior courtyard—bringing natural light into the heart of the home.",
+    images: [
+      { src: "https://i.etsystatic.com/59977188/r/il/327da3/6904431346/il_fullxfull.6904431346_gje8.jpg", alt: "Modern Courtyard House Plan – exterior render" },
+      { src: "https://i.etsystatic.com/59977188/r/il/fd8468/6905832116/il_fullxfull.6905832116_sh96.jpg", alt: "Modern Courtyard House Plan – floor plan" },
+      { src: "https://i.etsystatic.com/59977188/r/il/4e95b5/6952384253/il_fullxfull.6952384253_1bdt.jpg", alt: "Modern Courtyard House Plan – interior" },
+    ],
+    etsy_url: "https://www.etsy.com/shop/athomeplans",
+  },
+  {
+    id: "modern-farmhouse-living-room-lrmb01",
+    title: "Modern Farmhouse Living Room Mood Board | Rustic Neutral Decor (PDF)",
+    category: "Living Room",
+    style: "Modern Farmhouse",
+    price: 9.99,
+    description:
+      "Transform your space with this curated Modern Farmhouse Living Room Mood Board—perfect for homeowners, renters, or interior design enthusiasts looking for a cozy, timeless, and rustic aesthetic with a neutral color palette and warm textures.",
+    images: [
+      { src: "https://i.etsystatic.com/59977188/r/il/a0d114/6970014843/il_fullxfull.6970014843_esqs.jpg", alt: "Modern Farmhouse Living Room Mood Board – Rustic Neutral" },
+      { src: "https://i.etsystatic.com/59977188/r/il/c58878/6970014841/il_fullxfull.6970014841_5wh3.jpg", alt: "Modern Farmhouse Living Room – detail" },
+    ],
+    etsy_url: "https://www.etsy.com/shop/athomeplans",
+  },
+  {
+    id: "feminine-maximalist-living-room",
+    title: "Feminine Maximalist Living Room Mood Board | Glam Eclectic Interior Plan (Digital Download)",
+    category: "Living Room",
+    style: "Feminine Maximalist",
+    price: 22.22,
+    description:
+      "Design boldly. This Feminine Maximalism Living Room Mood Board celebrates personality, confidence, and unapologetic glamour. Whether you're styling your first apartment or transforming an Airbnb into a photo-worthy escape, this digital design board makes curated maximalist beauty effortless.",
+    images: [
+      { src: "https://i.etsystatic.com/59977188/r/il/8db65e/7753969533/il_fullxfull.7753969533_5s09.jpg", alt: "Feminine Maximalist Living Room Mood Board" },
+      { src: "https://i.etsystatic.com/59977188/r/il/aaffe1/7753969763/il_fullxfull.7753969763_80w2.jpg", alt: "Feminine Maximalist Living Room – detail" },
+      { src: "https://i.etsystatic.com/59977188/r/il/a6826a/7753970141/il_fullxfull.7753970141_jko6.jpg", alt: "Feminine Maximalist Living Room – shopping list" },
     ],
     etsy_url: "https://www.etsy.com/shop/athomeplans",
   },
