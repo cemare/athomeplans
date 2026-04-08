@@ -47,8 +47,8 @@
   "inlineImages": [
     {
       "src": "/images/inline-how-to-create-a-floor-plan-1.jpg",
-      "alt": "Room layout plan preview with a clean diagram, labels, and furniture placement blocks",
-      "caption": "Starting with a finished sample makes it easier to understand what details your own floor plan should include.",
+      "alt": "3D exterior rendering of a modern courtyard house with wood siding, stone accents, and a landscaped front entry",
+      "caption": "A 3D exterior rendering helps you see how the floor plan translates into a finished home before committing to a layout.",
       "afterParagraph": 2
     },
     {
@@ -59,8 +59,8 @@
     },
     {
       "src": "/images/inline-how-to-create-a-floor-plan-3.jpg",
-      "alt": "Editable single-room floor plan worksheet preview with notes, legend, and measurement fields",
-      "caption": "Measurement fields and notation turn a rough sketch into a plan you can actually use while furnishing.",
+      "alt": "Detailed floor plan for a modern courtyard home with labeled rooms: 3 bedrooms, 2 bathrooms, open kitchen-dining-living area, and 2-car garage",
+      "caption": "A labeled floor plan with room dimensions helps you verify furniture placement zones and traffic flow before committing to a layout.",
       "afterParagraph": 6
     }
   ]
