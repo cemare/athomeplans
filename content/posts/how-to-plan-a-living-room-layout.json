@@ -6,7 +6,11 @@
   "publishedAt": "2026-04-06",
   "author": "At Home Plans Team",
   "coverImage": "/images/cover-how-to-plan-a-living-room-layout.jpg",
-  "tags": ["Living Room", "Layout", "Small Spaces"],
+  "tags": [
+    "Living Room",
+    "Layout",
+    "Small Spaces"
+  ],
   "etsyLinks": [
     {
       "label": "Living Room Planner Template",
@@ -30,6 +34,12 @@
       "alt": "Living room seating area with two accent chairs facing each other across a round side table on a patterned rug",
       "caption": "Two chairs within easy conversation distance, grounded by a rug — this is what a well-proportioned seating group looks like.",
       "afterParagraph": 3
+    },
+    {
+      "src": "/images/inline-how-to-plan-a-living-room-layout-3.jpg",
+      "alt": "Digital furniture layout plan preview for a living room with seating zones and measurement notes",
+      "caption": "A dedicated layout plan helps you test focal-point placement and circulation before moving a single piece.",
+      "afterParagraph": 2
     }
   ],
   "affiliateProducts": [

@@ -66,5 +66,19 @@
       "retailer": "Wayfair",
       "priceRange": "$120–$400"
     }
+  ],
+  "inlineImages": [
+    {
+      "src": "/images/inline-how-to-choose-furniture-for-a-new-room-1.jpg",
+      "alt": "Furniture layout worksheet preview with notes for traffic flow, anchor pieces, and spacing",
+      "caption": "A placement worksheet helps you choose pieces by scale and flow instead of by shopping impulse.",
+      "afterParagraph": 2
+    },
+    {
+      "src": "/images/inline-how-to-choose-furniture-for-a-new-room-2.jpg",
+      "alt": "Living room seating arrangement with two chairs, a slim side table, and an area rug defining the zone",
+      "caption": "A room feels better furnished when each piece supports conversation distance and easy circulation.",
+      "afterParagraph": 4
+    }
   ]
 }

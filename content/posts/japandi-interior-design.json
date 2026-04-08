@@ -66,5 +66,25 @@
       "retailer": "Amazon",
       "priceRange": "$70–$200"
     }
+  ],
+  "inlineImages": [
+    {
+      "src": "/images/inline-japandi-interior-design-1.jpg",
+      "alt": "Soft Japandi-inspired living room with neutral upholstery, low visual clutter, and warm wood tones",
+      "caption": "Japandi rooms feel calm because the palette stays restrained and every piece earns its place.",
+      "afterParagraph": 2
+    },
+    {
+      "src": "/images/inline-japandi-interior-design-2.jpg",
+      "alt": "Japandi living room plan preview with warm neutrals, clean shapes, and a simplified decor layout",
+      "caption": "A Japandi plan reads best when furniture silhouettes stay simple and the palette stays quiet.",
+      "afterParagraph": 5
+    },
+    {
+      "src": "/images/inline-japandi-interior-design-3.jpg",
+      "alt": "Minimal bedroom vignette with a woven headboard, linen bedding, and understated wall decor",
+      "caption": "Texture does the visual work here: woven fiber, washed linen, and soft curves create warmth without clutter.",
+      "afterParagraph": 7
+    }
   ]
 }

@@ -6,7 +6,11 @@
   "publishedAt": "2026-04-04",
   "author": "At Home Plans Team",
   "coverImage": "/images/cover-how-to-mix-budget-and-premium-decor.jpg",
-  "tags": ["Decor", "Budget", "Styling"],
+  "tags": [
+    "Decor",
+    "Budget",
+    "Styling"
+  ],
   "etsyLinks": [
     {
       "label": "Decor Shopping Planner",
@@ -26,6 +30,12 @@
       "alt": "Minimalist bathroom with clean double vanity, warm walnut cabinets, and uncluttered surfaces",
       "caption": "Editing out the non-essentials lets quality materials — warm wood, polished nickel — do the talking.",
       "afterParagraph": 4
+    },
+    {
+      "src": "/images/inline-how-to-mix-budget-and-premium-decor-3.jpg",
+      "alt": "Digital decor guide preview with a curated room plan and clickable shopping list layout",
+      "caption": "A room-by-room decor guide keeps affordable basics and higher-end statement pieces working in the same palette.",
+      "afterParagraph": 3
     }
   ],
   "affiliateProducts": [
