@@ -34,6 +34,7 @@ const year = new Date().getFullYear();
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="sitemap" href="/sitemap.xml" />
     {noIndex ? <meta name="robots" content="noindex,nofollow" /> : null}
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalUrl} />
