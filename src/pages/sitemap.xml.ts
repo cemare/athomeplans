@@ -11,8 +11,7 @@ export const GET: APIRoute = () => {
     { path: "", priority: "1.0", changefreq: "weekly" },
     { path: "/blog", priority: "0.9", changefreq: "weekly" },
     { path: "/shop", priority: "0.8", changefreq: "monthly" },
-    { path: "/ebooks", priority: "0.8", changefreq: "monthly" },
-    { path: "/affiliate-disclosure", priority: "0.3", changefreq: "yearly" },
+{ path: "/affiliate-disclosure", priority: "0.3", changefreq: "yearly" },
   ];
 
   const staticUrls = staticPages
